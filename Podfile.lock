@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (5.4.1)
+  - Bond (7.8.1):
+    - Differ (~> 1.4)
+    - ReactiveKit (~> 3.14)
+  - Differ (1.4.5)
+  - Kingfisher (6.0.1)
+  - ReactiveKit (3.17.4)
+  - TTGTagCollectionView (1.11.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - Bond
+  - Kingfisher (~> 6.0)
+  - TTGTagCollectionView
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Bond
+    - Differ
+    - Kingfisher
+    - ReactiveKit
+    - TTGTagCollectionView
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Bond: 87075c7f20f37ea3e73dc7057fce839787bf46eb
+  Differ: 3b6bd78e2b20cc795d9a86f7641d087524e4273e
+  Kingfisher: adde87a4f74f6a3845395769354efff593581740
+  ReactiveKit: f9f9e079efa39312c597bf1508ef4810d111ce76
+  TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
+
+PODFILE CHECKSUM: 31c39c15eab7f46c39734b9593f400f2e6654208
+
+COCOAPODS: 1.10.1
