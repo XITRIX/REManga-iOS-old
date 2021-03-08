@@ -9,6 +9,7 @@ target 'REManga' do
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 6.0'
   pod "TTGTagCollectionView"
+  pod 'MarqueeLabel'
 
   target 'REMangaTests' do
     inherit! :search_paths

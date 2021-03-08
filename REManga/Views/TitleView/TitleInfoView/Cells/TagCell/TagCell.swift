@@ -8,9 +8,6 @@
 import UIKit
 
 class TagCell: UICollectionViewCell {
-    static let id = "TagCell"
-    static let nib = UINib(nibName: id, bundle: Bundle.main)
-
     @IBOutlet var name: UILabel!
     
     func setModel(_ model: ReTitleStatus) {

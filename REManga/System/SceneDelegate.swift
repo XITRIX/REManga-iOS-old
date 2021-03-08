@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let root = CollectionViewController()
-        window?.rootViewController = UINavigationController(rootViewController: root)
+        window?.rootViewController = SANavigationController(rootViewController: root)
         window?.makeKeyAndVisible()
     }
 

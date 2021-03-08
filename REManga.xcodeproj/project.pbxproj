@@ -17,8 +17,25 @@
 		7C3491EC25E1887A009938B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3491EA25E1887A009938B5 /* LaunchScreen.storyboard */; };
 		7C3491F725E1887B009938B5 /* REMangaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3491F625E1887B009938B5 /* REMangaTests.swift */; };
 		7C34920225E1887B009938B5 /* REMangaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34920125E1887B009938B5 /* REMangaUITests.swift */; };
+		7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC2025F68693004CA053 /* ReCatalogModel.swift */; };
+		7C38DC2625F6878C004CA053 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC2525F6878C004CA053 /* CollectionViewModel.swift */; };
+		7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */; };
+		7C7327FC25F4F33E00B7CFAD /* SANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */; };
+		7C73280325F54A6500B7CFAD /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280125F54A6500B7CFAD /* ReaderViewController.swift */; };
+		7C73280425F54A6500B7CFAD /* ReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C73280225F54A6500B7CFAD /* ReaderViewController.xib */; };
+		7C73280925F54A7B00B7CFAD /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280825F54A7B00B7CFAD /* ReaderViewModel.swift */; };
+		7C73280E25F54C4100B7CFAD /* ReChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */; };
+		7C73281525F555C200B7CFAD /* ReaderPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73281325F555C200B7CFAD /* ReaderPageCell.swift */; };
+		7C73281625F555C200B7CFAD /* ReaderPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C73281425F555C200B7CFAD /* ReaderPageCell.xib */; };
+		7C73281E25F55A0600B7CFAD /* UICollectionCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */; };
 		7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DAB25F03088003CFDA0 /* TagCell.swift */; };
 		7C788DAE25F03088003CFDA0 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DAC25F03088003CFDA0 /* TagCell.xib */; };
+		7C788DCA25F13664003CFDA0 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DC925F13664003CFDA0 /* UIViewControllerExtensions.swift */; };
+		7C788DD025F13731003CFDA0 /* TitleInfoTranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DCF25F13731003CFDA0 /* TitleInfoTranslatorView.swift */; };
+		7C788DD825F137E8003CFDA0 /* TitleInfoTranslatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DD725F137E8003CFDA0 /* TitleInfoTranslatorView.xib */; };
+		7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */; };
+		7C788DEC25F167A0003CFDA0 /* TitleInfoSimilarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */; };
+		7C788DED25F167A0003CFDA0 /* TitleInfoSimilarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */; };
 		7CA35FDD25E26B4200C0245B /* ReClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA35FDC25E26B4200C0245B /* ReClient.swift */; };
 		7CA35FE225E26E3700C0245B /* ReTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA35FE125E26E3700C0245B /* ReTitleModel.swift */; };
 		7CE002CB25E27DC5003AFCEF /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE002CA25E27DC5003AFCEF /* TitleViewModel.swift */; };
@@ -89,8 +106,25 @@
 		7C3491FD25E1887B009938B5 /* REMangaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REMangaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C34920125E1887B009938B5 /* REMangaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REMangaUITests.swift; sourceTree = "<group>"; };
 		7C34920325E1887B009938B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C38DC2025F68693004CA053 /* ReCatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReCatalogModel.swift; sourceTree = "<group>"; };
+		7C38DC2525F6878C004CA053 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAViewControllers.swift; sourceTree = "<group>"; };
+		7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANavigationController.swift; sourceTree = "<group>"; };
+		7C73280125F54A6500B7CFAD /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		7C73280225F54A6500B7CFAD /* ReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderViewController.xib; sourceTree = "<group>"; };
+		7C73280825F54A7B00B7CFAD /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
+		7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReChapterModel.swift; sourceTree = "<group>"; };
+		7C73281325F555C200B7CFAD /* ReaderPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPageCell.swift; sourceTree = "<group>"; };
+		7C73281425F555C200B7CFAD /* ReaderPageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderPageCell.xib; sourceTree = "<group>"; };
+		7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionCellExtensions.swift; sourceTree = "<group>"; };
 		7C788DAB25F03088003CFDA0 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		7C788DAC25F03088003CFDA0 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
+		7C788DC925F13664003CFDA0 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		7C788DCF25F13731003CFDA0 /* TitleInfoTranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoTranslatorView.swift; sourceTree = "<group>"; };
+		7C788DD725F137E8003CFDA0 /* TitleInfoTranslatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleInfoTranslatorView.xib; sourceTree = "<group>"; };
+		7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSimilarModel.swift; sourceTree = "<group>"; };
+		7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoSimilarCell.swift; sourceTree = "<group>"; };
+		7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleInfoSimilarCell.xib; sourceTree = "<group>"; };
 		7CA35FDC25E26B4200C0245B /* ReClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReClient.swift; sourceTree = "<group>"; };
 		7CA35FE125E26E3700C0245B /* ReTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReTitleModel.swift; sourceTree = "<group>"; };
 		7CE002BA25E27A55003AFCEF /* REManga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = REManga.entitlements; sourceTree = "<group>"; };
@@ -180,9 +214,9 @@
 			children = (
 				7CE002BA25E27A55003AFCEF /* REManga.entitlements */,
 				7C3491E525E18877009938B5 /* REManga.xcdatamodeld */,
+				7CA35FDB25E26B2300C0245B /* SDK */,
 				7CF77F7125E30F11002D575B /* Custom */,
 				7CE0030125E2C97E003AFCEF /* Extensions */,
-				7CA35FDB25E26B2300C0245B /* SDK */,
 				7CE002CF25E27E22003AFCEF /* Base */,
 				7C34922625E1895A009938B5 /* Views */,
 				7C34921F25E188F3009938B5 /* System */,
@@ -235,6 +269,7 @@
 			children = (
 				7CF77F7825E31DEE002D575B /* CollectionView */,
 				7C34922725E18961009938B5 /* TitleView */,
+				7C73280025F54A2C00B7CFAD /* ReaderView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,13 +287,84 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		7C38DC2D25F69065004CA053 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		7C7327F825F4F33E00B7CFAD /* SANavigation */ = {
+			isa = PBXGroup;
+			children = (
+				7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */,
+				7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */,
+			);
+			path = SANavigation;
+			sourceTree = "<group>";
+		};
+		7C73280025F54A2C00B7CFAD /* ReaderView */ = {
+			isa = PBXGroup;
+			children = (
+				7C73281225F5559B00B7CFAD /* Cells */,
+				7C73280825F54A7B00B7CFAD /* ReaderViewModel.swift */,
+				7C73280125F54A6500B7CFAD /* ReaderViewController.swift */,
+				7C73280225F54A6500B7CFAD /* ReaderViewController.xib */,
+			);
+			path = ReaderView;
+			sourceTree = "<group>";
+		};
+		7C73281225F5559B00B7CFAD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C73281325F555C200B7CFAD /* ReaderPageCell.swift */,
+				7C73281425F555C200B7CFAD /* ReaderPageCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7C788DAA25F0305D003CFDA0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C788DE025F163C9003CFDA0 /* TitleInfoSimilarCell */,
+				7C788DE925F166F8003CFDA0 /* TagCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7C788DCE25F1370F003CFDA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C788DDF25F163C2003CFDA0 /* TitleInfoTranslatorView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C788DDF25F163C2003CFDA0 /* TitleInfoTranslatorView */ = {
+			isa = PBXGroup;
+			children = (
+				7C788DCF25F13731003CFDA0 /* TitleInfoTranslatorView.swift */,
+				7C788DD725F137E8003CFDA0 /* TitleInfoTranslatorView.xib */,
+			);
+			path = TitleInfoTranslatorView;
+			sourceTree = "<group>";
+		};
+		7C788DE025F163C9003CFDA0 /* TitleInfoSimilarCell */ = {
+			isa = PBXGroup;
+			children = (
+				7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */,
+				7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */,
+			);
+			path = TitleInfoSimilarCell;
+			sourceTree = "<group>";
+		};
+		7C788DE925F166F8003CFDA0 /* TagCell */ = {
 			isa = PBXGroup;
 			children = (
 				7C788DAB25F03088003CFDA0 /* TagCell.swift */,
 				7C788DAC25F03088003CFDA0 /* TagCell.xib */,
 			);
-			path = Cells;
+			path = TagCell;
 			sourceTree = "<group>";
 		};
 		7CA35FDB25E26B2300C0245B /* SDK */ = {
@@ -267,6 +373,9 @@
 				7CA35FDC25E26B4200C0245B /* ReClient.swift */,
 				7CA35FE125E26E3700C0245B /* ReTitleModel.swift */,
 				7CF77F9725E41FD4002D575B /* ReBranchModel.swift */,
+				7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */,
+				7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */,
+				7C38DC2025F68693004CA053 /* ReCatalogModel.swift */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -292,10 +401,12 @@
 		7CE0030125E2C97E003AFCEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7CE0030225E2C992003AFCEF /* OptionalExtensions.swift */,
-				7CF77F6725E2FBF5002D575B /* UIViewExtensions.swift */,
 				7CF77F6C25E308BB002D575B /* IntExtensions.swift */,
+				7CE0030225E2C992003AFCEF /* OptionalExtensions.swift */,
 				7C010BFF25F00E8D007C0FC9 /* StringExtensions.swift */,
+				7C788DC925F13664003CFDA0 /* UIViewControllerExtensions.swift */,
+				7CF77F6725E2FBF5002D575B /* UIViewExtensions.swift */,
+				7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +432,8 @@
 		7CF77F7825E31DEE002D575B /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				7C38DC2D25F69065004CA053 /* New Group */,
+				7C38DC2525F6878C004CA053 /* CollectionViewModel.swift */,
 				7CF77F7925E31E16002D575B /* CollectionViewController.swift */,
 				7CF77F7A25E31E16002D575B /* CollectionViewController.xib */,
 			);
@@ -367,6 +480,7 @@
 		7CFA5B2225EEA88C002817F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C7327F825F4F33E00B7CFAD /* SANavigation */,
 				7CE002E925E2BAB1003AFCEF /* LoadingViewController */,
 			);
 			path = ViewControllers;
@@ -393,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				7C788DAA25F0305D003CFDA0 /* Cells */,
+				7C788DCE25F1370F003CFDA0 /* Views */,
 				7CFA5B3A25EEAC65002817F9 /* TitleInfoViewModel.swift */,
 				7CFA5B3025EEABC9002817F9 /* TitleInfoViewController.swift */,
 				7CFA5B3125EEABC9002817F9 /* TitleInfoViewController.xib */,
@@ -534,15 +649,19 @@
 				7C788DAE25F03088003CFDA0 /* TagCell.xib in Resources */,
 				7CF77F7C25E31E16002D575B /* CollectionViewController.xib in Resources */,
 				7C3491EC25E1887A009938B5 /* LaunchScreen.storyboard in Resources */,
+				7C73281625F555C200B7CFAD /* ReaderPageCell.xib in Resources */,
 				7CE002E525E29D06003AFCEF /* TitleViewController.xib in Resources */,
 				7CFA5B3325EEABC9002817F9 /* TitleInfoViewController.xib in Resources */,
 				7CFA5B2B25EEAA32002817F9 /* TitleTagCell.xib in Resources */,
 				7C3491E925E1887A009938B5 /* Assets.xcassets in Resources */,
 				7CF77F9325E39DB8002D575B /* SpacerCell.xib in Resources */,
 				7CF77FBB25E429CC002D575B /* BranchChapterCell.xib in Resources */,
+				7C788DD825F137E8003CFDA0 /* TitleInfoTranslatorView.xib in Resources */,
 				7CE002ED25E2BAC6003AFCEF /* LoadingViewController.xib in Resources */,
 				7C3491E425E18877009938B5 /* Main.storyboard in Resources */,
+				7C788DED25F167A0003CFDA0 /* TitleInfoSimilarCell.xib in Resources */,
 				7CF77FA525E42796002D575B /* BranchViewController.xib in Resources */,
+				7C73280425F54A6500B7CFAD /* ReaderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,27 +793,40 @@
 				7C3491DD25E18877009938B5 /* AppDelegate.swift in Sources */,
 				7CA35FDD25E26B4200C0245B /* ReClient.swift in Sources */,
 				7C3491DF25E18877009938B5 /* SceneDelegate.swift in Sources */,
+				7C788DD025F13731003CFDA0 /* TitleInfoTranslatorView.swift in Sources */,
+				7C73281525F555C200B7CFAD /* ReaderPageCell.swift in Sources */,
+				7C73281E25F55A0600B7CFAD /* UICollectionCellExtensions.swift in Sources */,
 				7CFA5B3B25EEAC65002817F9 /* TitleInfoViewModel.swift in Sources */,
 				7CF77FBA25E429CC002D575B /* BranchChapterCell.swift in Sources */,
+				7C73280325F54A6500B7CFAD /* ReaderViewController.swift in Sources */,
 				7CE002CB25E27DC5003AFCEF /* TitleViewModel.swift in Sources */,
 				7CF77F9825E41FD4002D575B /* ReBranchModel.swift in Sources */,
 				7CF77F7425E30F26002D575B /* GradientView.swift in Sources */,
 				7CE002D625E27E55003AFCEF /* BaseViewController.swift in Sources */,
 				7CFA5B2A25EEAA32002817F9 /* TitleTagCell.swift in Sources */,
 				7CE002D125E27E30003AFCEF /* BaseViewModel.swift in Sources */,
+				7C73280E25F54C4100B7CFAD /* ReChapterModel.swift in Sources */,
 				7CF77F9225E39DB8002D575B /* SpacerCell.swift in Sources */,
 				7CE0030325E2C992003AFCEF /* OptionalExtensions.swift in Sources */,
 				7CF77FAD25E427A5002D575B /* BranchViewModel.swift in Sources */,
+				7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */,
 				7CFA5B3225EEABC9002817F9 /* TitleInfoViewController.swift in Sources */,
+				7C788DCA25F13664003CFDA0 /* UIViewControllerExtensions.swift in Sources */,
 				7CF77F6D25E308BB002D575B /* IntExtensions.swift in Sources */,
 				7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */,
+				7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */,
+				7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */,
 				7CF77FA425E42796002D575B /* BranchViewController.swift in Sources */,
+				7C788DEC25F167A0003CFDA0 /* TitleInfoSimilarCell.swift in Sources */,
+				7C7327FC25F4F33E00B7CFAD /* SANavigationController.swift in Sources */,
 				7CF77F7B25E31E16002D575B /* CollectionViewController.swift in Sources */,
 				7CA35FE225E26E3700C0245B /* ReTitleModel.swift in Sources */,
 				7CE002EC25E2BAC6003AFCEF /* LoadingViewController.swift in Sources */,
 				7C3491E725E18877009938B5 /* REManga.xcdatamodeld in Sources */,
+				7C38DC2625F6878C004CA053 /* CollectionViewModel.swift in Sources */,
 				7CF77F6825E2FBF5002D575B /* UIViewExtensions.swift in Sources */,
 				7CE002E425E29D06003AFCEF /* TitleViewController.swift in Sources */,
+				7C73280925F54A7B00B7CFAD /* ReaderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,21 @@ class ReClient {
         baseRequest(api, completionHandler: completionHandler)
     }
     
+    func getSimilar(title: String, completionHandler: @escaping (Result<ReSimilarModel, Error>) -> ()) {
+        let api = "api/titles/" + title + "/similar"
+        baseRequest(api, completionHandler: completionHandler)
+    }
+    
+    func getChapter(chapter: Int, completionHandler: @escaping (Result<ReChapterModel, Error>) -> ()) {
+        let api = "api/titles/chapters/\(chapter)/"
+        baseRequest(api, completionHandler: completionHandler)
+    }
+    
+    func getCatalog(count: Int = 30, completionHandler: @escaping (Result<ReCatalogModel, Error>) -> ()) {
+        let api = "api/search/catalog/?ordering=-rating&\(count)"
+        baseRequest(api, completionHandler: completionHandler)
+    }
+    
     func baseRequest<T: Decodable>(_ api: String, completionHandler: @escaping (Result<T, Error>) -> ()) {
         AF.request(ReClient.baseUrl + api, method: .get, encoding: URLEncoding.default).responseData { response in
             switch response.result {

@@ -8,9 +8,6 @@
 import UIKit
 
 class SpacerCell: UITableViewCell {
-    static let id = "SpacerCell"
-    static let nib = UINib(nibName: id, bundle: Bundle.main)
-    
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var loadingIndicatior: UIActivityIndicatorView!
     

@@ -7,9 +7,13 @@
 
 import UIKit
 
-class BaseViewController<Model: BaseViewModel>: UIViewController {
+class BaseViewController<Model: BaseViewModel>: SAViewController {
     var overlay: UIViewController?
     var viewModel: Model!
+    
+    deinit {
+        print("Deinit: " + Self.description())
+    }
     
     init() {
         super.init(nibName: String(describing: Self.self), bundle: Bundle.main)
@@ -30,14 +34,14 @@ class BaseViewController<Model: BaseViewModel>: UIViewController {
     }
     
     func binding() {
-        viewModel.state.observeNext { state in
+        viewModel.state.observeNext { [unowned self] state in
             switch state {
-            case .Loading:
+            case .loading:
                 self.addOverlay(LoadingViewController())
-            case .Failed:
+            case .failed:
                 self.removeOverlay()
                 break
-            case .Done:
+            case .done:
                 self.removeOverlay()
                 break
             }
@@ -64,21 +68,5 @@ class BaseViewControllerWith<Model: BaseViewModelWith<Item>, Item: Any>: BaseVie
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-}
-
-extension UIViewController {
-    func addTo(_ viewController: UIViewController) {
-        viewController.addChild(self)
-        self.view.frame = viewController.view.frame
-        self.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        viewController.view.addSubview(self.view)
-        self.didMove(toParent: viewController)
-    }
-    
-    func remove() {
-        self.removeFromParent()
-        self.view.removeFromSuperview()
-        self.didMove(toParent: nil)
     }
 }

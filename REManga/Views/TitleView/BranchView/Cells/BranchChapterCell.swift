@@ -8,9 +8,6 @@
 import UIKit
 
 class BranchChapterCell: UITableViewCell {
-    static let id = "BranchChapterCell"
-    static let nib = UINib(nibName: id, bundle: Bundle.main)
-    
     @IBOutlet var tome: UILabel!
     @IBOutlet var chapter: UILabel!
     @IBOutlet var pubDate: UILabel!

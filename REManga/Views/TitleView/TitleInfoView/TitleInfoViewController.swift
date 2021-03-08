@@ -15,9 +15,13 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
     @IBOutlet var totalBookmarks: UILabel!
     @IBOutlet var titleDescription: UILabel!
     @IBOutlet var tagsCollection: TTGTextTagCollectionView!
-
+    @IBOutlet var publishersStack: UIStackView!
+    @IBOutlet var similarsCollection: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        similarsCollection.register(TitleInfoSimilarCell.nib, forCellWithReuseIdentifier: TitleInfoSimilarCell.id)
 
         tagsCollection.defaultConfig.cornerRadius = 10
         tagsCollection.defaultConfig.shadowRadius = 0
@@ -28,6 +32,8 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
         tagsCollection.defaultConfig.textFont = .systemFont(ofSize: 14)
         tagsCollection.defaultConfig.extraSpace = CGSize(width: 24, height: 12)
         tagsCollection.delegate = self
+        
+        publishersStack.translatesAutoresizingMaskIntoConstraints = false;
     }
 
     override func binding() {
@@ -35,11 +41,27 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
         viewModel.entity.totalViews.bind(to: totalViews).dispose(in: bag)
         viewModel.entity.totalVotes.bind(to: totalVotes).dispose(in: bag)
         viewModel.entity.countBookmarks.bind(to: totalBookmarks).dispose(in: bag)
-        viewModel.entity.description.observeNext(with: {
+        viewModel.entity.description.observeNext(with: { [unowned self] in
             self.titleDescription.attributedText = $0?.htmlAttributedString()
         }).dispose(in: bag)
-        viewModel.entity.categories.observeNext {
+        viewModel.entity.categories.observeNext { [unowned self] in
             self.tagsCollection.addTags($0.collection.compactMap { $0.name })
+        }.dispose(in: bag)
+        viewModel.entity.publishers.observeNext { [unowned self] (publishers) in
+            for publisher in publishers.collection {
+                let translator = TitleInfoTranslatorView(model: publisher)
+                self.publishersStack.addArrangedSubview(translator)
+            }
+        }.dispose(in: bag)
+        viewModel.entity.similar.bind(to: similarsCollection) { (models, indexPath, collectionView) -> UICollectionViewCell in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleInfoSimilarCell.id, for: indexPath) as! TitleInfoSimilarCell
+            cell.setModel(models[indexPath.item])
+            return cell
+        }.dispose(in: bag)
+        similarsCollection.reactive.selectedItemIndexPath.observeNext { [unowned self] indexPath in
+            if let dir = self.viewModel.entity.similar[indexPath.item].dir {
+                self.parent?.show(TitleViewController(parameter: dir), sender: self)
+            }
         }.dispose(in: bag)
     }
 

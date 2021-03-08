@@ -12,6 +12,6 @@ class TitleInfoViewModel: BaseViewModelWith<TitleViewModel> {
     
     override func prepare(_ parameter: TitleViewModel) {
         entity = parameter
-        setState(.Done)
+        setState(.done)
     }
 }

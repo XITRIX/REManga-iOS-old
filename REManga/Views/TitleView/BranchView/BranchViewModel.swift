@@ -21,12 +21,12 @@ class BranchViewModel: BaseViewModelWith<Int?> {
         
         ReClient.shared.getBranch(branch: parameter) { result in
             switch result {
-            case .failure(_):
-                self.setState(.Failed)
+            case .failure(let error):
+                self.setState(.failed(error))
                 break
             case .success(let model):
+                self.setState(.done)
                 self.chapters.replace(with: model.content)
-                self.setState(.Done)
                 break
             }
         }
