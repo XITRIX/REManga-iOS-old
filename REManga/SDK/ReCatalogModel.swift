@@ -26,7 +26,7 @@ struct ReCatalogContent: Codable {
     let dir: String?
     let issueYear: Int?
     let avgRating: String?
-    let type: ReCatalogType?
+    let type: String?
     let totalViews: Int?
     let totalVotes: Int?
     let coverHigh: String?
@@ -87,12 +87,12 @@ struct ReCatalogImg: Codable {
     }
 }
 
-enum ReCatalogType: String, Codable {
-    case западныйКомикс = "Западный комикс"
-    case манхва = "Манхва"
-    case маньхуа = "Маньхуа"
-    case рукомикс = "Рукомикс"
-}
+//enum ReCatalogType: String, Codable {
+//    case западныйКомикс = "Западный комикс"
+//    case манхва = "Манхва"
+//    case маньхуа = "Маньхуа"
+//    case рукомикс = "Рукомикс"
+//}
 
 // MARK: - ReCatalogProps
 struct ReCatalogProps: Codable {

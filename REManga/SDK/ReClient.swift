@@ -33,8 +33,8 @@ class ReClient {
         baseRequest(api, completionHandler: completionHandler)
     }
     
-    func getCatalog(count: Int = 30, completionHandler: @escaping (Result<ReCatalogModel, Error>) -> ()) {
-        let api = "api/search/catalog/?ordering=-rating&\(count)"
+    func getCatalog(page: Int, count: Int = 30, completionHandler: @escaping (Result<ReCatalogModel, Error>) -> ()) {
+        let api = "api/search/catalog/?ordering=-rating&page=\(page)&\(count)"
         baseRequest(api, completionHandler: completionHandler)
     }
     

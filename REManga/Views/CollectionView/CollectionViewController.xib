@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewController" customModule="REManga" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="5e3-Na-KBg" id="ipd-Hu-lRs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,26 +20,31 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tl-4U-eNf">
-                    <rect key="frame" x="184" y="433" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="open:" destination="-1" eventType="touchUpInside" id="ZSg-R0-Nk9"/>
-                    </connections>
-                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5e3-Na-KBg">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c1s-Cr-wNt">
+                        <size key="itemSize" width="100" height="185"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="12" minY="12" maxX="12" maxY="12"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="4Tl-4U-eNf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dxm-UQ-q8c"/>
-                <constraint firstItem="4Tl-4U-eNf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="uiR-md-SoZ"/>
+                <constraint firstAttribute="bottom" secondItem="5e3-Na-KBg" secondAttribute="bottom" id="Tne-nb-N9b"/>
+                <constraint firstItem="5e3-Na-KBg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="k2P-gd-s1Q"/>
+                <constraint firstItem="5e3-Na-KBg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tWY-gZ-65j"/>
+                <constraint firstItem="5e3-Na-KBg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zPZ-Xz-lfG"/>
             </constraints>
-            <point key="canvasLocation" x="-54" y="85"/>
+            <point key="canvasLocation" x="-55.072463768115945" y="84.375"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

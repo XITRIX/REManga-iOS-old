@@ -19,6 +19,10 @@
 		7C34920225E1887B009938B5 /* REMangaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C34920125E1887B009938B5 /* REMangaUITests.swift */; };
 		7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC2025F68693004CA053 /* ReCatalogModel.swift */; };
 		7C38DC2625F6878C004CA053 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC2525F6878C004CA053 /* CollectionViewModel.swift */; };
+		7C38DC3025F6963B004CA053 /* CatalogCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC2E25F6963B004CA053 /* CatalogCellView.swift */; };
+		7C38DC3125F6963B004CA053 /* CatalogCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C38DC2F25F6963B004CA053 /* CatalogCellView.xib */; };
+		7C38DC3625F6BD26004CA053 /* BondExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC3525F6BD26004CA053 /* BondExtensions.swift */; };
+		7C38DC3D25F7C97B004CA053 /* ReBranchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC3C25F7C97B004CA053 /* ReBranchModel.swift */; };
 		7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */; };
 		7C7327FC25F4F33E00B7CFAD /* SANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */; };
 		7C73280325F54A6500B7CFAD /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280125F54A6500B7CFAD /* ReaderViewController.swift */; };
@@ -53,7 +57,6 @@
 		7CF77F7C25E31E16002D575B /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF77F7A25E31E16002D575B /* CollectionViewController.xib */; };
 		7CF77F9225E39DB8002D575B /* SpacerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF77F9025E39DB8002D575B /* SpacerCell.swift */; };
 		7CF77F9325E39DB8002D575B /* SpacerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF77F9125E39DB8002D575B /* SpacerCell.xib */; };
-		7CF77F9825E41FD4002D575B /* ReBranchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF77F9725E41FD4002D575B /* ReBranchModel.swift */; };
 		7CF77FA425E42796002D575B /* BranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF77FA225E42796002D575B /* BranchViewController.swift */; };
 		7CF77FA525E42796002D575B /* BranchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CF77FA325E42796002D575B /* BranchViewController.xib */; };
 		7CF77FAD25E427A5002D575B /* BranchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF77FAC25E427A5002D575B /* BranchViewModel.swift */; };
@@ -108,6 +111,10 @@
 		7C34920325E1887B009938B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C38DC2025F68693004CA053 /* ReCatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReCatalogModel.swift; sourceTree = "<group>"; };
 		7C38DC2525F6878C004CA053 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		7C38DC2E25F6963B004CA053 /* CatalogCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCellView.swift; sourceTree = "<group>"; };
+		7C38DC2F25F6963B004CA053 /* CatalogCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCellView.xib; sourceTree = "<group>"; };
+		7C38DC3525F6BD26004CA053 /* BondExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondExtensions.swift; sourceTree = "<group>"; };
+		7C38DC3C25F7C97B004CA053 /* ReBranchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReBranchModel.swift; sourceTree = "<group>"; };
 		7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAViewControllers.swift; sourceTree = "<group>"; };
 		7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANavigationController.swift; sourceTree = "<group>"; };
 		7C73280125F54A6500B7CFAD /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +150,6 @@
 		7CF77F7A25E31E16002D575B /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		7CF77F9025E39DB8002D575B /* SpacerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerCell.swift; sourceTree = "<group>"; };
 		7CF77F9125E39DB8002D575B /* SpacerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpacerCell.xib; sourceTree = "<group>"; };
-		7CF77F9725E41FD4002D575B /* ReBranchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReBranchModel.swift; path = ../../../../../../Pictures/ReBranchModel.swift; sourceTree = "<group>"; };
 		7CF77FA225E42796002D575B /* BranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchViewController.swift; sourceTree = "<group>"; };
 		7CF77FA325E42796002D575B /* BranchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BranchViewController.xib; sourceTree = "<group>"; };
 		7CF77FAC25E427A5002D575B /* BranchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchViewModel.swift; sourceTree = "<group>"; };
@@ -287,11 +293,13 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
-		7C38DC2D25F69065004CA053 /* New Group */ = {
+		7C38DC2D25F69065004CA053 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7C38DC2E25F6963B004CA053 /* CatalogCellView.swift */,
+				7C38DC2F25F6963B004CA053 /* CatalogCellView.xib */,
 			);
-			path = "New Group";
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7C7327F825F4F33E00B7CFAD /* SANavigation */ = {
@@ -370,12 +378,12 @@
 		7CA35FDB25E26B2300C0245B /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				7CA35FDC25E26B4200C0245B /* ReClient.swift */,
-				7CA35FE125E26E3700C0245B /* ReTitleModel.swift */,
-				7CF77F9725E41FD4002D575B /* ReBranchModel.swift */,
-				7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */,
-				7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */,
+				7C38DC3C25F7C97B004CA053 /* ReBranchModel.swift */,
 				7C38DC2025F68693004CA053 /* ReCatalogModel.swift */,
+				7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */,
+				7CA35FDC25E26B4200C0245B /* ReClient.swift */,
+				7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */,
+				7CA35FE125E26E3700C0245B /* ReTitleModel.swift */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -407,6 +415,7 @@
 				7C788DC925F13664003CFDA0 /* UIViewControllerExtensions.swift */,
 				7CF77F6725E2FBF5002D575B /* UIViewExtensions.swift */,
 				7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */,
+				7C38DC3525F6BD26004CA053 /* BondExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,7 +441,7 @@
 		7CF77F7825E31DEE002D575B /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				7C38DC2D25F69065004CA053 /* New Group */,
+				7C38DC2D25F69065004CA053 /* Cells */,
 				7C38DC2525F6878C004CA053 /* CollectionViewModel.swift */,
 				7CF77F7925E31E16002D575B /* CollectionViewController.swift */,
 				7CF77F7A25E31E16002D575B /* CollectionViewController.xib */,
@@ -650,6 +659,7 @@
 				7CF77F7C25E31E16002D575B /* CollectionViewController.xib in Resources */,
 				7C3491EC25E1887A009938B5 /* LaunchScreen.storyboard in Resources */,
 				7C73281625F555C200B7CFAD /* ReaderPageCell.xib in Resources */,
+				7C38DC3125F6963B004CA053 /* CatalogCellView.xib in Resources */,
 				7CE002E525E29D06003AFCEF /* TitleViewController.xib in Resources */,
 				7CFA5B3325EEABC9002817F9 /* TitleInfoViewController.xib in Resources */,
 				7CFA5B2B25EEAA32002817F9 /* TitleTagCell.xib in Resources */,
@@ -789,7 +799,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C38DC3025F6963B004CA053 /* CatalogCellView.swift in Sources */,
 				7C010C0025F00E8D007C0FC9 /* StringExtensions.swift in Sources */,
+				7C38DC3625F6BD26004CA053 /* BondExtensions.swift in Sources */,
 				7C3491DD25E18877009938B5 /* AppDelegate.swift in Sources */,
 				7CA35FDD25E26B4200C0245B /* ReClient.swift in Sources */,
 				7C3491DF25E18877009938B5 /* SceneDelegate.swift in Sources */,
@@ -800,7 +812,6 @@
 				7CF77FBA25E429CC002D575B /* BranchChapterCell.swift in Sources */,
 				7C73280325F54A6500B7CFAD /* ReaderViewController.swift in Sources */,
 				7CE002CB25E27DC5003AFCEF /* TitleViewModel.swift in Sources */,
-				7CF77F9825E41FD4002D575B /* ReBranchModel.swift in Sources */,
 				7CF77F7425E30F26002D575B /* GradientView.swift in Sources */,
 				7CE002D625E27E55003AFCEF /* BaseViewController.swift in Sources */,
 				7CFA5B2A25EEAA32002817F9 /* TitleTagCell.swift in Sources */,
@@ -816,6 +827,7 @@
 				7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */,
 				7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */,
 				7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */,
+				7C38DC3D25F7C97B004CA053 /* ReBranchModel.swift in Sources */,
 				7CF77FA425E42796002D575B /* BranchViewController.swift in Sources */,
 				7C788DEC25F167A0003CFDA0 /* TitleInfoSimilarCell.swift in Sources */,
 				7C7327FC25F4F33E00B7CFAD /* SANavigationController.swift in Sources */,

@@ -11,6 +11,11 @@ class ReaderPageCell: UITableViewCell {
     @IBOutlet var pageImage: UIImageView!
     @IBOutlet var loader: UIActivityIndicatorView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         loader.isHidden = false

@@ -44,6 +44,7 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
         titleView = MarqueeLabel(frame: .zero, rate: 80, fadeLength: 10)
         titleView.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         titleView.trailingBuffer = 44
+        titleView.isHidden = true
         
         aboutView = TitleInfoViewController(parameter: viewModel)
         branchView = BranchViewController(self, parameter: nil)
@@ -149,6 +150,7 @@ extension TitleViewController: UIScrollViewDelegate {
         navEffect.alpha = alpha
         
         _navigationBarIsHidden = alpha == 0
+        titleView.isHidden = alpha == 0
         UIView.animate(withDuration: 0.3) {
             self.backButton.alpha = self._navigationBarIsHidden! ? 1 : 0
             self.updateNavigationControllerState()
