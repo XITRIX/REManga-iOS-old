@@ -9,7 +9,7 @@ import Foundation
 
 class TitleInfoViewModel: BaseViewModelWith<TitleViewModel> {
     private(set) var entity: TitleViewModel!
-    
+
     override func prepare(_ parameter: TitleViewModel) {
         entity = parameter
         setState(.done)

@@ -9,7 +9,7 @@ import UIKit
 
 class CollectionViewController: BaseViewController<CollectionViewModel> {
     enum Section {
-      case main
+        case main
     }
     
     @IBOutlet var collectionView: UICollectionView!

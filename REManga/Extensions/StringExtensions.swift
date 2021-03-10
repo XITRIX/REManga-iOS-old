@@ -14,7 +14,7 @@ extension String {
             data: data,
             options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
             documentAttributes: nil) else { return nil }
-        
+
         let range = NSRange(location: 0, length: html.string.count)
         html.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: size), range: range)
         html.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.label, range: range)

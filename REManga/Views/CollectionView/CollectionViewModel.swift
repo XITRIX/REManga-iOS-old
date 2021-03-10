@@ -5,8 +5,8 @@
 //  Created by Daniil Vinogradov on 08.03.2021.
 //
 
-import Foundation
 import Bond
+import Foundation
 
 class CollectionViewModel: BaseViewModel {
     let page = Observable<Int>(1)
@@ -21,13 +21,10 @@ class CollectionViewModel: BaseViewModel {
             switch result {
             case .failure(let error):
                 self.setState(.failed(error))
-                break
-            case .success(_):
+            case .success:
                 self.setState(.done)
-                break
             }
         }
-        
     }
     
     func loadNext(completionHandler: ((Result<ReCatalogModel, Error>) -> ())? = nil) {
@@ -36,12 +33,11 @@ class CollectionViewModel: BaseViewModel {
         loadLock = true
         ReClient.shared.getCatalog(page: page.value, count: 30) { result in
             switch result {
-            case .failure(_):
+            case .failure:
                 break
             case .success(let model):
                 self.setModel(model)
                 self.page.value += 1
-                break
             }
             completionHandler?(result)
             self.loadLock = false

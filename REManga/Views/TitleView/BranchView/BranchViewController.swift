@@ -5,15 +5,15 @@
 //  Created by Daniil Vinogradov on 22.02.2021.
 //
 
-import UIKit
 import Bond
+import UIKit
 
 class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
     weak var hostController: UIViewController!
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var showAllButton: UIButton!
-    @IBOutlet weak var showAllButtonBottonConstraint: NSLayoutConstraint!
+    @IBOutlet var showAllButtonBottonConstraint: NSLayoutConstraint!
     var heightConstraint: NSLayoutConstraint!
     
     var viewHeight: CGFloat?
@@ -42,14 +42,14 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
         tableView.isScrollEnabled = false
         tableView.register(BranchChapterCell.nib, forCellReuseIdentifier: BranchChapterCell.id)
         
-        showAllButtonBottonConstraint.constant = (self.sharedSafeArea?.bottom ?? 0)
+        showAllButtonBottonConstraint.constant = (sharedSafeArea?.bottom ?? 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let viewHeight = viewHeight {
-            self.navigationController?.view.heightAnchor.constraint(equalToConstant: viewHeight).isActive = true
+            navigationController?.view.heightAnchor.constraint(equalToConstant: viewHeight).isActive = true
         }
     }
     
@@ -76,5 +76,4 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
             self.hostController?.show(AllChaptersViewController(parameter: viewModel.chapters.collection), sender: self)
         }.dispose(in: bag)
     }
-
 }

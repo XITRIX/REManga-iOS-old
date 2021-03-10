@@ -11,11 +11,11 @@ extension UIViewController {
     var sharedWindow: UIWindow? {
         UIApplication.shared.windows.first
     }
-    
+
     var sharedSafeArea: UIEdgeInsets? {
-        sharedWindow?.safeAreaInsets
+        self.sharedWindow?.safeAreaInsets
     }
-    
+
     func addTo(_ viewController: UIViewController) {
         viewController.addChild(self)
         self.view.frame = viewController.view.frame
@@ -23,7 +23,7 @@ extension UIViewController {
         viewController.view.addSubview(self.view)
         self.didMove(toParent: viewController)
     }
-    
+
     func remove() {
         self.willMove(toParent: nil)
         self.view.removeFromSuperview()

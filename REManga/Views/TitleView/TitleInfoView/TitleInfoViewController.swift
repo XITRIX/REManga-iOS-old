@@ -17,10 +17,10 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
     @IBOutlet var tagsCollection: TTGTextTagCollectionView!
     @IBOutlet var publishersStack: UIStackView!
     @IBOutlet var similarsCollection: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         similarsCollection.register(TitleInfoSimilarCell.nib, forCellWithReuseIdentifier: TitleInfoSimilarCell.id)
 
         tagsCollection.defaultConfig.cornerRadius = 10
@@ -32,8 +32,8 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
         tagsCollection.defaultConfig.textFont = .systemFont(ofSize: 14)
         tagsCollection.defaultConfig.extraSpace = CGSize(width: 24, height: 12)
         tagsCollection.delegate = self
-        
-        publishersStack.translatesAutoresizingMaskIntoConstraints = false;
+
+        publishersStack.translatesAutoresizingMaskIntoConstraints = false
     }
 
     override func binding() {
@@ -47,7 +47,7 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
         viewModel.entity.categories.observeNext { [unowned self] in
             self.tagsCollection.addTags($0.collection.compactMap { $0.name })
         }.dispose(in: bag)
-        viewModel.entity.publishers.observeNext { [unowned self] (publishers) in
+        viewModel.entity.publishers.observeNext { [unowned self] publishers in
             for publisher in publishers.collection {
                 let translator = TitleInfoTranslatorView(model: publisher)
                 self.publishersStack.addArrangedSubview(translator)

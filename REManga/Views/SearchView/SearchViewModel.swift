@@ -5,8 +5,8 @@
 //  Created by Даниил Виноградов on 10.03.2021.
 //
 
-import Foundation
 import Bond
+import Foundation
 
 class SearchViewModel: BaseViewModel {
     let content = MutableObservableCollection<[ReSearchContent]>()
@@ -28,11 +28,9 @@ class SearchViewModel: BaseViewModel {
             switch result {
             case .failure(let error):
                 self.setState(.failed(error))
-                break
             case .success(let model):
                 self.setState(.done)
                 self.content.replace(with: model.content)
-                break
             }
         }
     }
@@ -46,7 +44,7 @@ class SearchViewModel: BaseViewModel {
 //                break
 //            case .success(let model):
 //                self.setState(.done)
-//                
+//
 //                var temp = self.content.collection
 //                temp.append(contentsOf: model.content)
 //                self.content.replace(with: temp)

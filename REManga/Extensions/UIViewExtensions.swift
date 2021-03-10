@@ -31,7 +31,6 @@ extension UIView {
         layer.mask = mask
     }
 
-    
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
@@ -51,6 +50,5 @@ extension UIView {
             topAnchor.constraint(equalTo: superview.topAnchor),
             bottomAnchor.constraint(equalTo: superview.bottomAnchor)
         ])
-        
     }
 }

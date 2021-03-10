@@ -5,8 +5,8 @@
 //  Created by Daniil Vinogradov on 21.02.2021.
 //
 
-import Foundation
 import Bond
+import Foundation
 
 class TitleViewModel: BaseViewModelWith<String> {
     let rusName = Observable<String?>(nil)
@@ -30,11 +30,9 @@ class TitleViewModel: BaseViewModelWith<String> {
             switch result {
             case .failure(let error):
                 self.setState(.failed(error))
-                break
             case .success(let model):
                 self.loadModel(model.content)
                 self.setState(.done)
-                break
             }
         }
         loadSimilar(parameter)
@@ -64,11 +62,10 @@ class TitleViewModel: BaseViewModelWith<String> {
     func loadSimilar(_ parameter: String) {
         ReClient.shared.getSimilar(title: parameter) { result in
             switch result {
-            case .failure(_):
+            case .failure:
                 break
             case .success(let model):
                 self.similar.replace(with: model.content)
-                break
             }
         }
     }

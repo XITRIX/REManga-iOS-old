@@ -9,7 +9,7 @@ import UIKit
 
 extension BinaryInteger {
     var degreesToRadians: CGFloat { return CGFloat(Int(self)) * .pi / 180 }
-    
+
     func cropText() -> String {
         if self >= 1000000 {
             return String(format: "%.1fM", Float(self) / 1000000)

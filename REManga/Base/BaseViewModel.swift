@@ -5,9 +5,9 @@
 //  Created by Daniil Vinogradov on 21.02.2021.
 //
 
+import Bond
 import Foundation
 import ReactiveKit
-import Bond
 
 enum ModelState: Equatable {
     case loading
@@ -40,7 +40,7 @@ class BaseViewModel {
         self.state.value = state
     }
     
-    func prepare() { }
+    func prepare() {}
 }
 
 class BaseViewModelWith<T>: BaseViewModel {
@@ -49,11 +49,11 @@ class BaseViewModelWith<T>: BaseViewModel {
         prepare(parameter)
     }
     
-    func prepare(_ parameter: T) { }
+    func prepare(_ parameter: T) {}
     
     @available(*, unavailable)
-    required init() { }
+    required init() {}
     
     @available(*, unavailable)
-    override func prepare() { }
+    override func prepare() {}
 }

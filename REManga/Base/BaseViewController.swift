@@ -17,7 +17,7 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
     
     init() {
         super.init(nibName: String(describing: Self.self), bundle: Bundle.main)
-        viewModel = Model.init()
+        viewModel = Model()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -40,10 +40,8 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
                 self.addOverlay(LoadingViewController())
             case .failed:
                 self.removeOverlay()
-                break
             case .done:
                 self.removeOverlay()
-                break
             }
         }.dispose(in: bag)
     }
@@ -51,7 +49,7 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
     func addOverlay(_ viewController: UIViewController) {
         removeOverlay()
         viewController.addTo(self)
-        self.overlay = viewController
+        overlay = viewController
     }
     
     func removeOverlay() {
@@ -63,7 +61,7 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
 class BaseViewControllerWith<Model: BaseViewModelWith<Item>, Item: Any>: BaseViewController<Model> {
     init(parameter: Item) {
         super.init(nibName: String(describing: Self.self), bundle: Bundle.main)
-        viewModel = Model.init(parameter: parameter)
+        viewModel = Model(parameter: parameter)
     }
     
     required init?(coder: NSCoder) {

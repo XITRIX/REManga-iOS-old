@@ -5,10 +5,10 @@
 //  Created by Daniil Vinogradov on 21.02.2021.
 //
 
-import UIKit
 import Bond
 import Kingfisher
 import MarqueeLabel
+import UIKit
 
 class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
     @IBOutlet var backButtonConstraint: NSLayoutConstraint!
@@ -117,15 +117,12 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
         switch sender.selectedSegmentIndex {
         case 0:
             setView(aboutView)
-            break
         case 1:
             let nvc = UINavigationController(rootViewController: branchView)
             nvc.navigationBar.isHidden = true
             setView(nvc)
-            break
         default:
             setView(nil)
-            break
         }
     }
     
@@ -144,7 +141,7 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
 
 extension TitleViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.updateNavigationControllerState(animated: false)
+        updateNavigationControllerState(animated: false)
         
         let alpha = max(0, min(1, max(0, (scrollView.contentOffset.y - headerView.frame.height / 2) / headerView.frame.height * 2)))
         navEffect.alpha = alpha

@@ -9,7 +9,7 @@ import UIKit
 
 class SearchViewController: BaseViewController<SearchViewModel> {
     enum Section {
-      case main
+        case main
     }
     
     @IBOutlet var collectionView: UICollectionView!
