@@ -22,4 +22,13 @@ class CatalogCellView: UICollectionViewCell {
         status.superview?.isHidden = model.bookmarkType == nil
         imageView.kf.setImage(with: URL(string: ReClient.baseUrl + (model.img?.mid ?? "")))
     }
+    
+    func setModel(_ model: ReSearchContent) {
+        title.text = model.rusName
+        subTitle.text = model.enName
+        score.text = model.avgRating
+        status.text = model.bookmarkType
+        status.superview?.isHidden = model.bookmarkType == nil
+        imageView.kf.setImage(with: URL(string: ReClient.baseUrl + (model.img?.mid ?? "")))
+    }
 }

@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BranchViewController" customModule="REManga" customModuleProvider="target">
             <connections>
+                <outlet property="showAllButton" destination="My5-cF-hmI" id="Xbl-eN-AN2"/>
+                <outlet property="showAllButtonBottonConstraint" destination="I6C-2O-Q65" id="m4i-2h-38w"/>
                 <outlet property="tableView" destination="244-Nl-Jmy" id="Ba6-kR-tIR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,17 +23,35 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="244-Nl-Jmy">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My5-cF-hmI">
+                    <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="yPm-FM-P50"/>
+                    </constraints>
+                    <state key="normal" title="Показать все главы"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" systemColor="tertiarySystemBackgroundColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="My5-cF-hmI" secondAttribute="bottom" constant="34" id="I6C-2O-Q65"/>
                 <constraint firstItem="244-Nl-Jmy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JFT-8v-IbL"/>
-                <constraint firstAttribute="bottom" secondItem="244-Nl-Jmy" secondAttribute="bottom" id="cRM-zW-Llr"/>
+                <constraint firstAttribute="trailing" secondItem="My5-cF-hmI" secondAttribute="trailing" id="ZKa-Qz-ht8"/>
                 <constraint firstItem="244-Nl-Jmy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ghP-gZ-BsI"/>
                 <constraint firstItem="244-Nl-Jmy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iwm-BE-vAe"/>
+                <constraint firstItem="My5-cF-hmI" firstAttribute="top" secondItem="244-Nl-Jmy" secondAttribute="bottom" id="mVf-kK-Gfd"/>
+                <constraint firstItem="My5-cF-hmI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nEB-8c-sBW"/>
             </constraints>
             <point key="canvasLocation" x="100.00000000000001" y="84.375"/>
         </view>
@@ -39,6 +59,9 @@
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

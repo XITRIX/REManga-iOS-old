@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - ReCatalogWelcome
-struct ReCatalogModel: Codable {
+struct ReCatalogModel: Codable, Hashable {
     let msg: String?
     let content: [ReCatalogContent]
     let props: ReCatalogProps?
@@ -19,7 +19,7 @@ struct ReCatalogModel: Codable {
 }
 
 // MARK: - ReCatalogContent
-struct ReCatalogContent: Codable {
+struct ReCatalogContent: Codable, Hashable {
     let id: Int?
     let enName: String?
     let rusName: String?
@@ -57,14 +57,14 @@ struct ReCatalogContent: Codable {
     }
 }
 
-enum ReCatalogBookmarkType: String, Codable {
+enum ReCatalogBookmarkType: String, Codable, Hashable {
     case будуЧитать = "Буду читать"
     case прочитано = "Прочитано"
     case читаю = "Читаю"
 }
 
 // MARK: - ReCatalogCategory
-struct ReCatalogCategory: Codable {
+struct ReCatalogCategory: Codable, Hashable {
     let id: Int?
     let name: String?
 
@@ -75,7 +75,7 @@ struct ReCatalogCategory: Codable {
 }
 
 // MARK: - ReCatalogImg
-struct ReCatalogImg: Codable {
+struct ReCatalogImg: Codable, Hashable {
     let high: String?
     let mid: String?
     let low: String?
@@ -95,7 +95,7 @@ struct ReCatalogImg: Codable {
 //}
 
 // MARK: - ReCatalogProps
-struct ReCatalogProps: Codable {
+struct ReCatalogProps: Codable, Hashable {
     let totalItems: Int?
     let totalPages: Int?
     let page: Int?

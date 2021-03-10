@@ -34,8 +34,8 @@ struct ReChapterContent: Codable {
     let titleID: Int?
     let volumeID: JSONNull?
     let branchID: Int?
-    let price: JSONNull?
-    let pubDate: JSONNull?
+    let price: String?
+    let pubDate: String?
     let publishers: [ReChapterPublisher]?
     let index: Int?
     let pages: [ReChapterPageUnion]

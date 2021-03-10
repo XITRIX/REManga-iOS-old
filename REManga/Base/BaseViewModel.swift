@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ReactiveKit
 import Bond
 
 enum ModelState: Equatable {
@@ -28,12 +29,18 @@ enum ModelState: Equatable {
 }
 
 class BaseViewModel {
+    let bag = DisposeBag()
     let state = Observable<ModelState>(.loading)
-    required init() { }
+    
+    required init() {
+        prepare()
+    }
     
     func setState(_ state: ModelState) {
         self.state.value = state
     }
+    
+    func prepare() { }
 }
 
 class BaseViewModelWith<T>: BaseViewModel {
@@ -46,4 +53,7 @@ class BaseViewModelWith<T>: BaseViewModel {
     
     @available(*, unavailable)
     required init() { }
+    
+    @available(*, unavailable)
+    override func prepare() { }
 }

@@ -40,6 +40,29 @@ class REMangaTests: XCTestCase {
             }
         }
     }
+    
+    func testApiSearch() throws {
+        let client = ReClient()
+        let expect = expectation(description: "ReClient gets search query and runs the callback closure")
+
+        client.getSearch(query: "Начало после", page: 1, count: 30) { result in
+            switch result {
+            case .success(let model):
+                print(model)
+                break
+            case .failure(let error):
+                XCTFail("Error getting title: \(error)")
+                break
+            }
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+    }
 
     func testExample() throws {
         // This is an example of a functional test case.

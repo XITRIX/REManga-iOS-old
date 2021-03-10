@@ -9,7 +9,8 @@ import Foundation
 import Bond
 
 class BranchViewModel: BaseViewModelWith<Int?> {
-    var chapters = MutableObservableArray<ReBranchContent>([])
+    var chapters = MutableObservableArray<ReBranchContent>()
+    var chaptersToShow = MutableObservableArray<ReBranchContent>()
     
     override func prepare(_ parameter: Int?) {
         setBranch(parameter)
@@ -27,6 +28,7 @@ class BranchViewModel: BaseViewModelWith<Int?> {
             case .success(let model):
                 self.setState(.done)
                 self.chapters.replace(with: model.content)
+                self.chaptersToShow.replace(with: model.content.crop(to: 20))
                 break
             }
         }

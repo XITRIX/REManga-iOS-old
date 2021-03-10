@@ -29,8 +29,6 @@
 		7C73280425F54A6500B7CFAD /* ReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C73280225F54A6500B7CFAD /* ReaderViewController.xib */; };
 		7C73280925F54A7B00B7CFAD /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280825F54A7B00B7CFAD /* ReaderViewModel.swift */; };
 		7C73280E25F54C4100B7CFAD /* ReChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */; };
-		7C73281525F555C200B7CFAD /* ReaderPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73281325F555C200B7CFAD /* ReaderPageCell.swift */; };
-		7C73281625F555C200B7CFAD /* ReaderPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C73281425F555C200B7CFAD /* ReaderPageCell.xib */; };
 		7C73281E25F55A0600B7CFAD /* UICollectionCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */; };
 		7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DAB25F03088003CFDA0 /* TagCell.swift */; };
 		7C788DAE25F03088003CFDA0 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DAC25F03088003CFDA0 /* TagCell.xib */; };
@@ -40,6 +38,17 @@
 		7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */; };
 		7C788DEC25F167A0003CFDA0 /* TitleInfoSimilarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */; };
 		7C788DED25F167A0003CFDA0 /* TitleInfoSimilarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */; };
+		7C9DF3D925F8DC77008D2898 /* AllChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */; };
+		7C9DF3E125F8DC8F008D2898 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */; };
+		7C9DF3E625F8E9FA008D2898 /* AllChaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */; };
+		7C9DF3EE25F908E5008D2898 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3ED25F908E5008D2898 /* ArrayExtensions.swift */; };
+		7C9DF3FA25F925F6008D2898 /* ReaderPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3F825F925F6008D2898 /* ReaderPageCell.swift */; };
+		7C9DF3FB25F925F6008D2898 /* ReaderPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9DF3F925F925F6008D2898 /* ReaderPageCell.xib */; };
+		7C9DF40325F92ABA008D2898 /* ReSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF40225F92ABA008D2898 /* ReSearchModel.swift */; };
+		7C9DF40825F92DF7008D2898 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF40725F92DF7008D2898 /* RuntimeError.swift */; };
+		7C9DF41225F938C5008D2898 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF41025F938C5008D2898 /* SearchViewController.swift */; };
+		7C9DF41325F938C5008D2898 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9DF41125F938C5008D2898 /* SearchViewController.xib */; };
+		7C9DF41B25F9394E008D2898 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF41A25F9394E008D2898 /* SearchViewModel.swift */; };
 		7CA35FDD25E26B4200C0245B /* ReClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA35FDC25E26B4200C0245B /* ReClient.swift */; };
 		7CA35FE225E26E3700C0245B /* ReTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA35FE125E26E3700C0245B /* ReTitleModel.swift */; };
 		7CE002CB25E27DC5003AFCEF /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE002CA25E27DC5003AFCEF /* TitleViewModel.swift */; };
@@ -121,8 +130,6 @@
 		7C73280225F54A6500B7CFAD /* ReaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderViewController.xib; sourceTree = "<group>"; };
 		7C73280825F54A7B00B7CFAD /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
 		7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReChapterModel.swift; sourceTree = "<group>"; };
-		7C73281325F555C200B7CFAD /* ReaderPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPageCell.swift; sourceTree = "<group>"; };
-		7C73281425F555C200B7CFAD /* ReaderPageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderPageCell.xib; sourceTree = "<group>"; };
 		7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionCellExtensions.swift; sourceTree = "<group>"; };
 		7C788DAB25F03088003CFDA0 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		7C788DAC25F03088003CFDA0 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
@@ -132,6 +139,17 @@
 		7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSimilarModel.swift; sourceTree = "<group>"; };
 		7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoSimilarCell.swift; sourceTree = "<group>"; };
 		7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleInfoSimilarCell.xib; sourceTree = "<group>"; };
+		7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChaptersViewController.swift; sourceTree = "<group>"; };
+		7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChaptersViewModel.swift; sourceTree = "<group>"; };
+		7C9DF3ED25F908E5008D2898 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		7C9DF3F825F925F6008D2898 /* ReaderPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPageCell.swift; sourceTree = "<group>"; };
+		7C9DF3F925F925F6008D2898 /* ReaderPageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderPageCell.xib; sourceTree = "<group>"; };
+		7C9DF40225F92ABA008D2898 /* ReSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSearchModel.swift; sourceTree = "<group>"; };
+		7C9DF40725F92DF7008D2898 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
+		7C9DF41025F938C5008D2898 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7C9DF41125F938C5008D2898 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		7C9DF41A25F9394E008D2898 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		7CA35FDC25E26B4200C0245B /* ReClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReClient.swift; sourceTree = "<group>"; };
 		7CA35FE125E26E3700C0245B /* ReTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReTitleModel.swift; sourceTree = "<group>"; };
 		7CE002BA25E27A55003AFCEF /* REManga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = REManga.entitlements; sourceTree = "<group>"; };
@@ -273,6 +291,7 @@
 		7C34922625E1895A009938B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C9DF40F25F938A1008D2898 /* SearchView */,
 				7CF77F7825E31DEE002D575B /* CollectionView */,
 				7C34922725E18961009938B5 /* TitleView */,
 				7C73280025F54A2C00B7CFAD /* ReaderView */,
@@ -325,8 +344,8 @@
 		7C73281225F5559B00B7CFAD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7C73281325F555C200B7CFAD /* ReaderPageCell.swift */,
-				7C73281425F555C200B7CFAD /* ReaderPageCell.xib */,
+				7C9DF3F825F925F6008D2898 /* ReaderPageCell.swift */,
+				7C9DF3F925F925F6008D2898 /* ReaderPageCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -375,15 +394,35 @@
 			path = TagCell;
 			sourceTree = "<group>";
 		};
+		7C9DF3D725F8DC1C008D2898 /* AllChaptersView */ = {
+			isa = PBXGroup;
+			children = (
+				7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */,
+				7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */,
+			);
+			path = AllChaptersView;
+			sourceTree = "<group>";
+		};
+		7C9DF40F25F938A1008D2898 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				7C9DF41A25F9394E008D2898 /* SearchViewModel.swift */,
+				7C9DF41025F938C5008D2898 /* SearchViewController.swift */,
+				7C9DF41125F938C5008D2898 /* SearchViewController.xib */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		7CA35FDB25E26B2300C0245B /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				7CA35FDC25E26B4200C0245B /* ReClient.swift */,
 				7C38DC3C25F7C97B004CA053 /* ReBranchModel.swift */,
 				7C38DC2025F68693004CA053 /* ReCatalogModel.swift */,
 				7C73280D25F54C4100B7CFAD /* ReChapterModel.swift */,
-				7CA35FDC25E26B4200C0245B /* ReClient.swift */,
 				7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */,
 				7CA35FE125E26E3700C0245B /* ReTitleModel.swift */,
+				7C9DF40225F92ABA008D2898 /* ReSearchModel.swift */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -391,8 +430,10 @@
 		7CE002CF25E27E22003AFCEF /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				7C9DF40725F92DF7008D2898 /* RuntimeError.swift */,
 				7CE002D025E27E30003AFCEF /* BaseViewModel.swift */,
 				7CE002D525E27E55003AFCEF /* BaseViewController.swift */,
+				7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -416,6 +457,7 @@
 				7CF77F6725E2FBF5002D575B /* UIViewExtensions.swift */,
 				7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */,
 				7C38DC3525F6BD26004CA053 /* BondExtensions.swift */,
+				7C9DF3ED25F908E5008D2898 /* ArrayExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,6 +511,7 @@
 		7CF77FA125E42769002D575B /* BranchView */ = {
 			isa = PBXGroup;
 			children = (
+				7C9DF3D725F8DC1C008D2898 /* AllChaptersView */,
 				7CF77FB725E429A3002D575B /* Cells */,
 				7CF77FAC25E427A5002D575B /* BranchViewModel.swift */,
 				7CF77FA225E42796002D575B /* BranchViewController.swift */,
@@ -658,7 +701,6 @@
 				7C788DAE25F03088003CFDA0 /* TagCell.xib in Resources */,
 				7CF77F7C25E31E16002D575B /* CollectionViewController.xib in Resources */,
 				7C3491EC25E1887A009938B5 /* LaunchScreen.storyboard in Resources */,
-				7C73281625F555C200B7CFAD /* ReaderPageCell.xib in Resources */,
 				7C38DC3125F6963B004CA053 /* CatalogCellView.xib in Resources */,
 				7CE002E525E29D06003AFCEF /* TitleViewController.xib in Resources */,
 				7CFA5B3325EEABC9002817F9 /* TitleInfoViewController.xib in Resources */,
@@ -670,8 +712,10 @@
 				7CE002ED25E2BAC6003AFCEF /* LoadingViewController.xib in Resources */,
 				7C3491E425E18877009938B5 /* Main.storyboard in Resources */,
 				7C788DED25F167A0003CFDA0 /* TitleInfoSimilarCell.xib in Resources */,
+				7C9DF41325F938C5008D2898 /* SearchViewController.xib in Resources */,
 				7CF77FA525E42796002D575B /* BranchViewController.xib in Resources */,
 				7C73280425F54A6500B7CFAD /* ReaderViewController.xib in Resources */,
+				7C9DF3FB25F925F6008D2898 /* ReaderPageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,8 +850,9 @@
 				7CA35FDD25E26B4200C0245B /* ReClient.swift in Sources */,
 				7C3491DF25E18877009938B5 /* SceneDelegate.swift in Sources */,
 				7C788DD025F13731003CFDA0 /* TitleInfoTranslatorView.swift in Sources */,
-				7C73281525F555C200B7CFAD /* ReaderPageCell.swift in Sources */,
 				7C73281E25F55A0600B7CFAD /* UICollectionCellExtensions.swift in Sources */,
+				7C9DF41225F938C5008D2898 /* SearchViewController.swift in Sources */,
+				7C9DF3E625F8E9FA008D2898 /* AllChaptersViewModel.swift in Sources */,
 				7CFA5B3B25EEAC65002817F9 /* TitleInfoViewModel.swift in Sources */,
 				7CF77FBA25E429CC002D575B /* BranchChapterCell.swift in Sources */,
 				7C73280325F54A6500B7CFAD /* ReaderViewController.swift in Sources */,
@@ -816,6 +861,7 @@
 				7CE002D625E27E55003AFCEF /* BaseViewController.swift in Sources */,
 				7CFA5B2A25EEAA32002817F9 /* TitleTagCell.swift in Sources */,
 				7CE002D125E27E30003AFCEF /* BaseViewModel.swift in Sources */,
+				7C9DF41B25F9394E008D2898 /* SearchViewModel.swift in Sources */,
 				7C73280E25F54C4100B7CFAD /* ReChapterModel.swift in Sources */,
 				7CF77F9225E39DB8002D575B /* SpacerCell.swift in Sources */,
 				7CE0030325E2C992003AFCEF /* OptionalExtensions.swift in Sources */,
@@ -823,8 +869,13 @@
 				7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */,
 				7CFA5B3225EEABC9002817F9 /* TitleInfoViewController.swift in Sources */,
 				7C788DCA25F13664003CFDA0 /* UIViewControllerExtensions.swift in Sources */,
+				7C9DF3E125F8DC8F008D2898 /* BaseTableViewController.swift in Sources */,
+				7C9DF40825F92DF7008D2898 /* RuntimeError.swift in Sources */,
+				7C9DF3D925F8DC77008D2898 /* AllChaptersViewController.swift in Sources */,
+				7C9DF3EE25F908E5008D2898 /* ArrayExtensions.swift in Sources */,
 				7CF77F6D25E308BB002D575B /* IntExtensions.swift in Sources */,
 				7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */,
+				7C9DF3FA25F925F6008D2898 /* ReaderPageCell.swift in Sources */,
 				7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */,
 				7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */,
 				7C38DC3D25F7C97B004CA053 /* ReBranchModel.swift in Sources */,
@@ -836,6 +887,7 @@
 				7CE002EC25E2BAC6003AFCEF /* LoadingViewController.swift in Sources */,
 				7C3491E725E18877009938B5 /* REManga.xcdatamodeld in Sources */,
 				7C38DC2625F6878C004CA053 /* CollectionViewModel.swift in Sources */,
+				7C9DF40325F92ABA008D2898 /* ReSearchModel.swift in Sources */,
 				7CF77F6825E2FBF5002D575B /* UIViewExtensions.swift in Sources */,
 				7CE002E425E29D06003AFCEF /* TitleViewController.swift in Sources */,
 				7C73280925F54A7B00B7CFAD /* ReaderViewModel.swift in Sources */,

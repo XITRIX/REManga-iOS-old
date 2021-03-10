@@ -12,6 +12,8 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
     weak var hostController: UIViewController!
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var showAllButton: UIButton!
+    @IBOutlet weak var showAllButtonBottonConstraint: NSLayoutConstraint!
     var heightConstraint: NSLayoutConstraint!
     
     var viewHeight: CGFloat?
@@ -39,6 +41,8 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
         tableView.rowHeight = cellHeight
         tableView.isScrollEnabled = false
         tableView.register(BranchChapterCell.nib, forCellReuseIdentifier: BranchChapterCell.id)
+        
+        showAllButtonBottonConstraint.constant = (self.sharedSafeArea?.bottom ?? 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,13 +55,13 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
     
     override func binding() {
         super.binding()
-        viewModel.chapters.observeNext { [unowned self] _ in
-            viewHeight = CGFloat(self.viewModel.chapters.count) * self.cellHeight
+        viewModel.chaptersToShow.observeNext { [unowned self] _ in
+            viewHeight = CGFloat(self.viewModel.chaptersToShow.count) * self.cellHeight + (self.sharedSafeArea?.bottom ?? 0) + showAllButton.frame.height
             self.heightConstraint.constant = viewHeight!
             self.navigationController?.view.heightAnchor.constraint(equalToConstant: viewHeight!).isActive = true
         }.dispose(in: bag)
         
-        viewModel.chapters.bind(to: tableView) { (models, indexPath, tableView) -> UITableViewCell in
+        viewModel.chaptersToShow.bind(to: tableView) { (models, indexPath, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: BranchChapterCell.id, for: indexPath) as! BranchChapterCell
             cell.setModel(models[indexPath.row])
             return cell
@@ -65,7 +69,11 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
         
         tableView.reactive.selectedRowIndexPath.observeNext { [unowned self] indexPath in
             tableView.deselectRow(at: indexPath, animated: true)
-            self.hostController?.show(ReaderViewController(parameter: viewModel.chapters[indexPath.row].id), sender: self)
+            self.hostController?.show(ReaderViewController(parameter: viewModel.chaptersToShow[indexPath.row].id), sender: self)
+        }.dispose(in: bag)
+        
+        showAllButton.reactive.controlEvents(.touchUpInside).observeNext { [unowned self] _ in
+            self.hostController?.show(AllChaptersViewController(parameter: viewModel.chapters.collection), sender: self)
         }.dispose(in: bag)
     }
 
