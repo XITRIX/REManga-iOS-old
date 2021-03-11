@@ -39,6 +39,7 @@
                 <constraint firstItem="5e3-Na-KBg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tWY-gZ-65j"/>
                 <constraint firstItem="5e3-Na-KBg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zPZ-Xz-lfG"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="-55.072463768115945" y="84.375"/>
         </view>
     </objects>

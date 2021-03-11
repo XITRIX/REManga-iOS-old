@@ -16,9 +16,9 @@ extension UIViewController {
         self.sharedWindow?.safeAreaInsets
     }
 
-    func addTo(_ viewController: UIViewController) {
+    func add(to viewController: UIViewController) {
         viewController.addChild(self)
-        self.view.frame = viewController.view.frame
+        self.view.frame = viewController.view.bounds
         self.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         viewController.view.addSubview(self.view)
         self.didMove(toParent: viewController)

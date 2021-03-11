@@ -18,9 +18,7 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
     @IBOutlet var publishersStack: UIStackView!
     @IBOutlet var similarsCollection: UICollectionView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func setView() {
         similarsCollection.register(TitleInfoSimilarCell.nib, forCellWithReuseIdentifier: TitleInfoSimilarCell.id)
 
         tagsCollection.defaultConfig.cornerRadius = 10

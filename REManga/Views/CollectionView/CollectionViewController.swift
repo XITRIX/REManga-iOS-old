@@ -8,6 +8,8 @@
 import UIKit
 
 class CollectionViewController: BaseViewController<CollectionViewModel> {
+    override var navigationBarIsHidden: Bool? { false }
+    
     enum Section {
         case main
     }
@@ -15,12 +17,11 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
     @IBOutlet var collectionView: UICollectionView!
     var collectionViewDataSource: UICollectionViewDiffableDataSource<Section, ReCatalogContent>!
     
-    override var navigationBarIsHidden: Bool? { false }
-    
     let columns: CGFloat = 3
     var activityView: UIActivityIndicatorView!
     
     let searchController = UISearchController(searchResultsController: SearchViewController())
+    var overlayView: OverlayController!
     
     override func loadView() {
         super.loadView()
@@ -33,18 +34,34 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func setView() {
         title = "RE:Manga"
         
         collectionView.register(CatalogCellView.nib, forCellWithReuseIdentifier: CatalogCellView.id)
         collectionView.dataSource = collectionViewDataSource
         collectionView.delegate = self
         
-        searchController.searchBar.placeholder = "Что ищем, семпай?"
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
+//        searchController.searchBar.placeholder = "Что ищем, семпай?"
+//        searchController.searchResultsUpdater = self
+//        navigationItem.searchController = searchController
+        
+        overlayView = OverlayController(self, rootVC: SearchViewController())
+        
+        let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showOverlay))
+        navigationItem.setRightBarButton(search, animated: false)
+    }
+    
+    @objc func showOverlay() {
+        overlayView.show()
+    }
+    
+    @objc func hideOverlay() {
+        overlayView.hide()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func binding() {
@@ -60,6 +77,10 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
 }
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        !overlayView.presented
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y + scrollView.frame.height > scrollView.contentSize.height - 200 {
             viewModel.loadNext()

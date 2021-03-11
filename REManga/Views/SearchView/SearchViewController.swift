@@ -6,19 +6,26 @@
 //
 
 import UIKit
+import Bond
 
 class SearchViewController: BaseViewController<SearchViewModel> {
+    override var navigationBarIsHidden: Bool? { false }
+    
     enum Section {
         case main
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var collectionView: UICollectionView!
+   
     var collectionViewDataSource: UICollectionViewDiffableDataSource<Section, ReSearchContent>!
     
     let columns: CGFloat = 3
     
     override func loadView() {
         super.loadView()
+        
+        searchBar.backgroundImage = UIImage()
         
         collectionViewDataSource = UICollectionViewDiffableDataSource<Section, ReSearchContent>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, content) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CatalogCellView.id, for: indexPath) as! CatalogCellView
@@ -27,9 +34,12 @@ class SearchViewController: BaseViewController<SearchViewModel> {
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchBar.becomeFirstResponder()
+    }
+    
+    override func setView() {
         collectionView.register(CatalogCellView.nib, forCellWithReuseIdentifier: CatalogCellView.id)
         collectionView.dataSource = collectionViewDataSource
         collectionView.delegate = self
@@ -44,22 +54,23 @@ class SearchViewController: BaseViewController<SearchViewModel> {
             snapshot.appendItems(content.collection)
             self.collectionViewDataSource.apply(snapshot)
         }.dispose(in: bag)
+        
+        viewModel.query.bidirectionalBind(to: searchBar.reactive.text).dispose(in: bag)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionViewDataSource.apply(collectionViewDataSource.snapshot())
     }
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y + scrollView.frame.height > scrollView.contentSize.height - 200 {
-//            viewModel.loadNext()
-//        }
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let dir = viewModel.content[indexPath.item].dir
         else { return }
         
         let root = TitleViewController(parameter: dir)
-        sharedWindow?.rootViewController?.show(root, sender: self)
+        show(root, sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -13,9 +13,7 @@ class ReaderViewController: BaseViewControllerWith<ReaderViewModel, Int> {
     var _navigationBarIsHidden: Bool = false
     override var navigationBarIsHidden: Bool? { _navigationBarIsHidden }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func setView() {
         collectionView.contentInset.top = (sharedSafeArea?.top ?? 0) + (navigationController?.navigationBar.frame.height ?? 0)
         collectionView.register(ReaderPageCell.nib, forCellWithReuseIdentifier: ReaderPageCell.id)
         collectionView.delegate = self

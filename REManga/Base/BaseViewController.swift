@@ -28,10 +28,18 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
         super.init(coder: coder)
     }
     
+    override func loadView() {
+        super.loadView()
+    }
+    
+    @available(*, unavailable)
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
         binding()
     }
+    
+    func setView() {}
     
     func binding() {
         viewModel.state.observeNext { [unowned self] state in
@@ -48,7 +56,7 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
     
     func addOverlay(_ viewController: UIViewController) {
         removeOverlay()
-        viewController.addTo(self)
+        viewController.add(to: self)
         overlay = viewController
     }
     

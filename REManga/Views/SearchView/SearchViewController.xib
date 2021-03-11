@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -12,43 +12,69 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="REManga" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="EMC-r0-0Sj" id="lGb-eS-dtc"/>
+                <outlet property="searchBar" destination="MBD-sM-GWb" id="zO4-mT-ttb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-r0-0Sj">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-r0-0Sj">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="56" maxX="0.0" maxY="0.0"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Grd-KD-RGc">
                         <size key="itemSize" width="100" height="185"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="12" minY="12" maxX="12" maxY="12"/>
+                        <inset key="sectionInset" minX="12" minY="68" maxX="12" maxY="12"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="251-7b-uMS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bzr-ua-UZH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Что ищем, семпай?" translatesAutoresizingMaskIntoConstraints="NO" id="MBD-sM-GWb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MBD-sM-GWb" firstAttribute="top" secondItem="Bzr-ua-UZH" secondAttribute="top" id="UBB-wW-bI9"/>
+                            <constraint firstAttribute="bottom" secondItem="MBD-sM-GWb" secondAttribute="bottom" id="VX2-IX-C4v"/>
+                            <constraint firstAttribute="trailing" secondItem="MBD-sM-GWb" secondAttribute="trailing" id="VbN-I6-Nsb"/>
+                            <constraint firstItem="MBD-sM-GWb" firstAttribute="leading" secondItem="Bzr-ua-UZH" secondAttribute="leading" id="e57-H6-084"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="systemThickMaterial"/>
+                </visualEffectView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="EMC-r0-0Sj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="55i-gs-Z3C"/>
+                <constraint firstItem="EMC-r0-0Sj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1fy-dv-vsj"/>
                 <constraint firstItem="EMC-r0-0Sj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9ca-1U-s1U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="251-7b-uMS" secondAttribute="trailing" id="Eha-Zv-D8R"/>
                 <constraint firstAttribute="bottom" secondItem="EMC-r0-0Sj" secondAttribute="bottom" id="Izl-qj-VHn"/>
                 <constraint firstAttribute="trailing" secondItem="EMC-r0-0Sj" secondAttribute="trailing" id="ad0-XS-2Dn"/>
+                <constraint firstItem="251-7b-uMS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kGY-ID-Knz"/>
+                <constraint firstItem="251-7b-uMS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qWy-2Z-Ze4"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="28" y="110"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="27.536231884057973" y="-75"/>
         </view>
     </objects>
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

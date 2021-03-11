@@ -12,13 +12,13 @@ class SearchViewModel: BaseViewModel {
     let content = MutableObservableCollection<[ReSearchContent]>()
     
     let page = Observable<Int>(1)
-    let query = Observable<String>("")
+    let query = Observable<String?>("")
     
     var lock = false
     
     override func prepare() {
         query.observeNext { [unowned self] query in
-            self.search(query)
+            self.search(query ?? "")
         }.dispose(in: bag)
     }
     

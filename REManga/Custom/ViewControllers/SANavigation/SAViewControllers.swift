@@ -24,25 +24,33 @@ class SAViewController: UIViewController, NavigationProtocol {
         nil
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateNavigationControllerState(animated: animated)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let nav = navigationController as? SANavigationController,
-            nav.viewControllers.last == self {
+           nav.viewControllers.last == self
+        {
             nav.locker = false
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateNavigationControllerState()
+        updateNavigationControllerState(animated: false)
     }
     
     func updateNavigationControllerState(animated: Bool = true) {
-        if let toolBarIsHidden = toolBarIsHidden {
+        if let toolBarIsHidden = toolBarIsHidden//,
+//           navigationController?.isToolbarHidden != toolBarIsHidden
+        {
+//            navigationController?.isToolbarHidden = toolBarIsHidden
             navigationController?.setToolbarHidden(toolBarIsHidden, animated: animated)
         }
         
-        if let navigationBarIsHidden = navigationBarIsHidden {
+        if let navigationBarIsHidden = navigationBarIsHidden//,
+//           navigationController?.isNavigationBarHidden != navigationBarIsHidden
+        {
+//            navigationController?.isNavigationBarHidden = navigationBarIsHidden
             navigationController?.setNavigationBarHidden(navigationBarIsHidden, animated: animated)
         }
     }
@@ -60,7 +68,8 @@ class SATableViewController: UITableViewController, NavigationProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let nav = navigationController as? SANavigationController,
-            nav.viewControllers.last == self {
+           nav.viewControllers.last == self
+        {
             nav.locker = false
         }
     }

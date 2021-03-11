@@ -35,7 +35,7 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
     
     var containedVC: UIViewController?
     
-    var _navigationBarIsHidden: Bool?
+    var _navigationBarIsHidden: Bool = true
     override var navigationBarIsHidden: Bool? { _navigationBarIsHidden }
     
     override func loadView() {
@@ -52,31 +52,26 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
         backButtonConstraint.constant = (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 6
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func setView() {
         scrollView.delegate = self
         
         navigationItem.titleView = titleView
-        
-        let appearence = UINavigationBarAppearance()
-        appearence.configureWithTransparentBackground()
-        navigationItem.standardAppearance = appearence
         
         navEffect.alpha = 0
 
         setView(aboutView)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let appearence = UINavigationBarAppearance()
+        appearence.configureWithTransparentBackground()
+        navigationItem.standardAppearance = appearence
+    }
+    
     override func binding() {
         super.binding()
-        
-        viewModel.state.observeNext { [unowned self] state in
-            if state == .done {
-                self._navigationBarIsHidden = true
-                self.updateNavigationControllerState()
-            }
-        }.dispose(in: bag)
         
         backButton.reactive.tap.observeNext { [unowned self] _ in
             self.navigationController?.popViewController(animated: true)
@@ -149,7 +144,7 @@ extension TitleViewController: UIScrollViewDelegate {
         _navigationBarIsHidden = alpha == 0
         titleView.isHidden = alpha == 0
         UIView.animate(withDuration: 0.3) {
-            self.backButton.alpha = self._navigationBarIsHidden! ? 1 : 0
+            self.backButton.alpha = self._navigationBarIsHidden ? 1 : 0
             self.updateNavigationControllerState()
         }
     }

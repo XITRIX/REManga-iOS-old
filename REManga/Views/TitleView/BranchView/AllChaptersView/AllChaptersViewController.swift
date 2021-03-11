@@ -8,9 +8,7 @@
 import UIKit
 
 class AllChaptersViewController: BaseTableViewControllerWith<AllChaptersViewModel, [ReBranchContent]> {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func setView() {
         tableView.register(BranchChapterCell.nib, forCellReuseIdentifier: BranchChapterCell.id)
         tableView.backgroundColor = .secondarySystemBackground
     }

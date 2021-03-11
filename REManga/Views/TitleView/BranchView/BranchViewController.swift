@@ -35,9 +35,7 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
         heightConstraint.isActive = true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func setView() {
         tableView.rowHeight = cellHeight
         tableView.isScrollEnabled = false
         tableView.register(BranchChapterCell.nib, forCellReuseIdentifier: BranchChapterCell.id)

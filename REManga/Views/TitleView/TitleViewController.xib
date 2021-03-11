@@ -56,10 +56,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="569.5"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPl-3a-7an" customClass="GradientView" customModule="REManga" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="238" width="414" height="331.5"/>
+                                                    <rect key="frame" x="0.0" y="198" width="414" height="371.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gvT-ri-vEv">
-                                                            <rect key="frame" x="24" y="124" width="366" height="155.5"/>
+                                                            <rect key="frame" x="24" y="164" width="366" height="155.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkS-0o-S6N">
                                                                     <rect key="frame" x="0.0" y="0.0" width="366" height="16"/>
@@ -161,7 +161,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYZ-i9-Na7">
-                                                            <rect key="frame" x="0.0" y="303.5" width="414" height="28"/>
+                                                            <rect key="frame" x="0.0" y="343.5" width="414" height="28"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="1wn-kj-bGn"/>
@@ -173,7 +173,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="gvT-ri-vEv" secondAttribute="trailing" constant="24" id="95H-8Q-wLO"/>
                                                         <constraint firstItem="zYZ-i9-Na7" firstAttribute="leading" secondItem="PPl-3a-7an" secondAttribute="leading" id="9dw-hf-ZDH"/>
                                                         <constraint firstAttribute="trailing" secondItem="zYZ-i9-Na7" secondAttribute="trailing" id="GJU-3I-cmc"/>
-                                                        <constraint firstItem="gvT-ri-vEv" firstAttribute="top" secondItem="PPl-3a-7an" secondAttribute="top" constant="124" id="ZzS-pW-hSj"/>
+                                                        <constraint firstItem="gvT-ri-vEv" firstAttribute="top" secondItem="PPl-3a-7an" secondAttribute="top" constant="164" id="ZzS-pW-hSj"/>
                                                         <constraint firstItem="zYZ-i9-Na7" firstAttribute="top" secondItem="gvT-ri-vEv" secondAttribute="bottom" constant="24" id="h5T-EL-h9s"/>
                                                         <constraint firstAttribute="bottom" secondItem="zYZ-i9-Na7" secondAttribute="bottom" id="kCn-l2-ASg"/>
                                                     </constraints>

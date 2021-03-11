@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F855296AB6847C4A00B3E25 /* Pods_REMangaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1294895C89BA39D7685032 /* Pods_REMangaTests.framework */; };
 		7C010C0025F00E8D007C0FC9 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C010BFF25F00E8D007C0FC9 /* StringExtensions.swift */; };
+		7C133E2925FA257B0045CDBB /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C133E2825FA257B0045CDBB /* OverlayController.swift */; };
 		7C3491DD25E18877009938B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3491DC25E18877009938B5 /* AppDelegate.swift */; };
 		7C3491DF25E18877009938B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3491DE25E18877009938B5 /* SceneDelegate.swift */; };
 		7C3491E425E18877009938B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3491E225E18877009938B5 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		7C38DC3025F6963B004CA053 /* CatalogCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC2E25F6963B004CA053 /* CatalogCellView.swift */; };
 		7C38DC3125F6963B004CA053 /* CatalogCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C38DC2F25F6963B004CA053 /* CatalogCellView.xib */; };
 		7C38DC3D25F7C97B004CA053 /* ReBranchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38DC3C25F7C97B004CA053 /* ReBranchModel.swift */; };
+		7C47706B25FA5F81008146E8 /* BondExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47706A25FA5F81008146E8 /* BondExtensions.swift */; };
+		7C47707225FA71B6008146E8 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47707125FA71B6008146E8 /* KeyboardHelper.swift */; };
 		7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */; };
 		7C7327FC25F4F33E00B7CFAD /* SANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */; };
 		7C73280325F54A6500B7CFAD /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C73280125F54A6500B7CFAD /* ReaderViewController.swift */; };
@@ -103,6 +106,7 @@
 		6C6372E5C5F950C8C67B89DF /* Pods-REManga-REMangaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REManga-REMangaUITests.release.xcconfig"; path = "Target Support Files/Pods-REManga-REMangaUITests/Pods-REManga-REMangaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6F88A0C02AE761F47BBF9BDC /* Pods_REManga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_REManga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C010BFF25F00E8D007C0FC9 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		7C133E2825FA257B0045CDBB /* OverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayController.swift; sourceTree = "<group>"; };
 		7C3491D925E18877009938B5 /* REManga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REManga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3491DC25E18877009938B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3491DE25E18877009938B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		7C38DC2E25F6963B004CA053 /* CatalogCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCellView.swift; sourceTree = "<group>"; };
 		7C38DC2F25F6963B004CA053 /* CatalogCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCellView.xib; sourceTree = "<group>"; };
 		7C38DC3C25F7C97B004CA053 /* ReBranchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReBranchModel.swift; sourceTree = "<group>"; };
+		7C47706A25FA5F81008146E8 /* BondExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondExtensions.swift; sourceTree = "<group>"; };
+		7C47707125FA71B6008146E8 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		7C7327F925F4F33E00B7CFAD /* SAViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAViewControllers.swift; sourceTree = "<group>"; };
 		7C7327FA25F4F33E00B7CFAD /* SANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANavigationController.swift; sourceTree = "<group>"; };
 		7C73280125F54A6500B7CFAD /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +216,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C133E2725FA25540045CDBB /* OverlayController */ = {
+			isa = PBXGroup;
+			children = (
+				7C133E2825FA257B0045CDBB /* OverlayController.swift */,
+			);
+			path = OverlayController;
+			sourceTree = "<group>";
+		};
 		7C3491D025E18877009938B5 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +251,7 @@
 				7CE002BA25E27A55003AFCEF /* REManga.entitlements */,
 				7C3491E525E18877009938B5 /* REManga.xcdatamodeld */,
 				7CA35FDB25E26B2300C0245B /* SDK */,
+				7C47707025FA71A4008146E8 /* Utils */,
 				7CF77F7125E30F11002D575B /* Custom */,
 				7CE0030125E2C97E003AFCEF /* Extensions */,
 				7CE002CF25E27E22003AFCEF /* Base */,
@@ -317,6 +332,14 @@
 				7C38DC2F25F6963B004CA053 /* CatalogCellView.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7C47707025FA71A4008146E8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7C47707125FA71B6008146E8 /* KeyboardHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7C7327F825F4F33E00B7CFAD /* SANavigation */ = {
@@ -455,6 +478,7 @@
 				7CF77F6725E2FBF5002D575B /* UIViewExtensions.swift */,
 				7C73281D25F55A0600B7CFAD /* UICollectionCellExtensions.swift */,
 				7C9DF3ED25F908E5008D2898 /* ArrayExtensions.swift */,
+				7C47706A25FA5F81008146E8 /* BondExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,6 +553,7 @@
 		7CFA5B2225EEA88C002817F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C133E2725FA25540045CDBB /* OverlayController */,
 				7C7327F825F4F33E00B7CFAD /* SANavigation */,
 				7CE002E925E2BAB1003AFCEF /* LoadingViewController */,
 			);
@@ -848,6 +873,7 @@
 				7C788DD025F13731003CFDA0 /* TitleInfoTranslatorView.swift in Sources */,
 				7C73281E25F55A0600B7CFAD /* UICollectionCellExtensions.swift in Sources */,
 				7C9DF41225F938C5008D2898 /* SearchViewController.swift in Sources */,
+				7C133E2925FA257B0045CDBB /* OverlayController.swift in Sources */,
 				7C9DF3E625F8E9FA008D2898 /* AllChaptersViewModel.swift in Sources */,
 				7CFA5B3B25EEAC65002817F9 /* TitleInfoViewModel.swift in Sources */,
 				7CF77FBA25E429CC002D575B /* BranchChapterCell.swift in Sources */,
@@ -865,6 +891,7 @@
 				7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */,
 				7CFA5B3225EEABC9002817F9 /* TitleInfoViewController.swift in Sources */,
 				7C788DCA25F13664003CFDA0 /* UIViewControllerExtensions.swift in Sources */,
+				7C47707225FA71B6008146E8 /* KeyboardHelper.swift in Sources */,
 				7C9DF3E125F8DC8F008D2898 /* BaseTableViewController.swift in Sources */,
 				7C9DF40825F92DF7008D2898 /* RuntimeError.swift in Sources */,
 				7C9DF3D925F8DC77008D2898 /* AllChaptersViewController.swift in Sources */,
@@ -886,6 +913,7 @@
 				7C9DF40325F92ABA008D2898 /* ReSearchModel.swift in Sources */,
 				7CF77F6825E2FBF5002D575B /* UIViewExtensions.swift in Sources */,
 				7CE002E425E29D06003AFCEF /* TitleViewController.swift in Sources */,
+				7C47706B25FA5F81008146E8 /* BondExtensions.swift in Sources */,
 				7C73280925F54A7B00B7CFAD /* ReaderViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
