@@ -12,15 +12,17 @@ class OverlayController: SAViewController {
     var rootVC: UIViewController!
 
     private(set) var presented: Bool = false
+    
+    private var topConstraint: NSLayoutConstraint?
     private var bottomConstraint: NSLayoutConstraint?
     
-    lazy var horizontalOffset: CGFloat = {
+    var horizontalOffset: CGFloat {
         view.frame.width * 0.05
-    }()
+    }
     
-    lazy var verticalOffset: CGFloat = {
+    var verticalOffset: CGFloat {
         view.frame.height * 0.1
-    }()
+    }
 
     let container: UIView = {
         let view = UIView()
@@ -84,6 +86,11 @@ class OverlayController: SAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        updateConstraints()
+    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -94,8 +101,12 @@ class OverlayController: SAViewController {
             self.bottomConstraint?.constant = hidden ? self.verticalOffset : KeyboardHelper.shared.visibleHeight.value + self.horizontalOffset
             
             UIView.animate(withDuration: KeyboardHelper.shared.animationDuration.value) {
-                view.layoutIfNeeded()
+                self.view.layoutIfNeeded()
             }
+        }.dispose(in: bag)
+        
+        KeyboardHelper.shared.visibleHeight.observeNext { height in
+            self.bottomConstraint?.constant = KeyboardHelper.shared.isHidden.value ? self.verticalOffset : height + self.horizontalOffset
         }.dispose(in: bag)
     }
 
@@ -155,9 +166,16 @@ class OverlayController: SAViewController {
         container.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         container.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         container.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9).isActive = true
-        container.topAnchor.constraint(equalTo: view.topAnchor, constant: verticalOffset).isActive = true
+        
+        topConstraint = container.topAnchor.constraint(equalTo: view.topAnchor, constant: verticalOffset)
+        topConstraint?.isActive = true
         
         bottomConstraint = view.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: verticalOffset)
         bottomConstraint?.isActive = true
+    }
+    
+    private func updateConstraints() {
+        topConstraint?.constant = verticalOffset
+        bottomConstraint?.constant = KeyboardHelper.shared.isHidden.value ? self.verticalOffset : KeyboardHelper.shared.visibleHeight.value + self.horizontalOffset
     }
 }

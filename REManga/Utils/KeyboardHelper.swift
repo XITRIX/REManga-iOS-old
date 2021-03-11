@@ -44,12 +44,14 @@ class KeyboardHelper: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(frameHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         UIApplication.shared.windows.first?.addGestureRecognizer(panRecognizer)
         
-        frameVariable.observeNext { [weak self] frame in
-            guard let self = self else { return }
-
+        frameVariable.observeNext { [unowned self] frame in
             self.frame.value = frame
             self.visibleHeight.value = max(UIApplication.shared.windows.first!.bounds.height - frame.origin.y, 0)
-            self.isHidden.value = self.visibleHeight.value <= 0
+            
+            let hidden = self.visibleHeight.value <= 0
+            if self.isHidden.value != hidden {
+                self.isHidden.value = hidden
+            }
         }.dispose(in: disposalBag)
     }
     
@@ -89,7 +91,10 @@ class KeyboardHelper: NSObject {
         let origin = gestureRecognizer.location(in: window)
         var newFrame = frameVariable.value
         newFrame.origin.y = max(origin.y, UIApplication.shared.windows.first!.bounds.height - frameVariable.value.height)
-        frameVariable.value = newFrame
+        
+        if frameVariable.value != newFrame {
+            frameVariable.value = newFrame
+        }
     }
 }
 

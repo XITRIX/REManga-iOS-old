@@ -20,7 +20,7 @@ class SearchViewController: BaseViewController<SearchViewModel> {
    
     var collectionViewDataSource: UICollectionViewDiffableDataSource<Section, ReSearchContent>!
     
-    let columns: CGFloat = 3
+    var columns: CGFloat { view.traitCollection.horizontalSizeClass == .compact ? 3 : 5 }
     
     override func loadView() {
         super.loadView()

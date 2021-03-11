@@ -17,10 +17,9 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
     @IBOutlet var collectionView: UICollectionView!
     var collectionViewDataSource: UICollectionViewDiffableDataSource<Section, ReCatalogContent>!
     
-    let columns: CGFloat = 3
+    var columns: CGFloat { view.traitCollection.horizontalSizeClass == .compact ? 3 : 5 }
     var activityView: UIActivityIndicatorView!
     
-    let searchController = UISearchController(searchResultsController: SearchViewController())
     var overlayView: OverlayController!
     
     override func loadView() {
@@ -40,11 +39,6 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
         collectionView.register(CatalogCellView.nib, forCellWithReuseIdentifier: CatalogCellView.id)
         collectionView.dataSource = collectionViewDataSource
         collectionView.delegate = self
-        
-//        searchController.searchBar.placeholder = "Что ищем, семпай?"
-//        searchController.searchResultsUpdater = self
-//        navigationItem.searchController = searchController
-        
         overlayView = OverlayController(self, rootVC: SearchViewController())
         
         let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showOverlay))
@@ -101,14 +95,5 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
         let itemWidth = CGFloat((frameWithoutInset - frameSeparators) / columns)
         
         return CGSize(width: itemWidth, height: itemWidth / 0.56)
-    }
-}
-
-extension CollectionViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let search = searchController.searchResultsController as? SearchViewController
-        else { return }
-        
-        search.viewModel.query.value = searchController.searchBar.text ?? ""
     }
 }
