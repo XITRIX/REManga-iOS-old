@@ -23,7 +23,9 @@ class GradientView: UIView {
     }
 
     private func updateColor() {
-        guard let gradientLayer = layer as? CAGradientLayer else { return }
+        guard let gradientLayer = layer as? CAGradientLayer else {
+            return
+        }
         gradientLayer.colors = [
             UIColor.clear.cgColor,
             UIColor.systemBackground.cgColor

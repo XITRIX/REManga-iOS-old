@@ -10,13 +10,13 @@ import UIKit
 class ReaderPageCell: UICollectionViewCell {
     @IBOutlet var pageImage: UIImageView!
     @IBOutlet var loader: UIActivityIndicatorView!
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         loader.isHidden = false
         loader.startAnimating()
     }
-    
+
     func setModel(_ model: ReChapterPage) {
         pageImage.kf.setImage(with: URL(string: model.link ?? "")) { result in
             self.loader.isHidden = true

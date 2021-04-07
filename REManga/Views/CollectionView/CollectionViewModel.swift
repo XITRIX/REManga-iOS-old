@@ -11,12 +11,12 @@ import Foundation
 class CollectionViewModel: BaseViewModel {
     let page = Observable<Int>(1)
     let content = MutableObservableCollection<[ReCatalogContent]>([])
-    
+
     private var loadLock = false
-    
+
     required init() {
         super.init()
-        
+
         loadNext { result in
             switch result {
             case .failure(let error):
@@ -26,10 +26,12 @@ class CollectionViewModel: BaseViewModel {
             }
         }
     }
-    
+
     func loadNext(completionHandler: ((Result<ReCatalogModel, Error>) -> ())? = nil) {
-        if loadLock { return }
-        
+        if loadLock {
+            return
+        }
+
         loadLock = true
         ReClient.shared.getCatalog(page: page.value, count: 30) { result in
             switch result {
@@ -43,7 +45,7 @@ class CollectionViewModel: BaseViewModel {
             self.loadLock = false
         }
     }
-    
+
     func setModel(_ model: ReCatalogModel) {
         var temp = content.collection
         temp.append(contentsOf: model.content)

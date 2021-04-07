@@ -167,7 +167,7 @@ struct ReChapterTrack: Codable {
 
 class JSONNull: Codable, Hashable {
 
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
+    public static func ==(lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
     }
 
@@ -175,7 +175,8 @@ class JSONNull: Codable, Hashable {
         return 0
     }
 
-    public init() {}
+    public init() {
+    }
 
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

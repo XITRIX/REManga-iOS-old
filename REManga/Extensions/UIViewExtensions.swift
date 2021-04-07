@@ -13,19 +13,19 @@ extension UIView {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: bounds.height))
         path.addArc(withCenter: CGPoint(x: radius, y: radius),
-                    radius: radius,
-                    startAngle: 180.degreesToRadians,
-                    endAngle: 270.degreesToRadians,
-                    clockwise: true)
-        
+                radius: radius,
+                startAngle: 180.degreesToRadians,
+                endAngle: 270.degreesToRadians,
+                clockwise: true)
+
         path.addLine(to: CGPoint(x: bounds.width - radius, y: 0))
         path.addArc(withCenter: CGPoint(x: bounds.width - radius, y: radius),
-                    radius: radius,
-                    startAngle: 270.degreesToRadians,
-                    endAngle: 360.degreesToRadians,
-                    clockwise: true)
+                radius: radius,
+                startAngle: 270.degreesToRadians,
+                endAngle: 360.degreesToRadians,
+                clockwise: true)
         path.close()
-        
+
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
@@ -37,11 +37,13 @@ extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
-    
+
     func fitToParent() {
         guard let superview = superview
-        else { return }
-        
+                else {
+            return
+        }
+
 //        frame = superview.bounds
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

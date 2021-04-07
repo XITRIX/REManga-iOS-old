@@ -8,16 +8,16 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-    
+
     init() {
         super.init(nibName: String(describing: Self.self), bundle: Bundle.main)
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = parent?.view.backgroundColor

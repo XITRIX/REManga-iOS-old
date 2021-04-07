@@ -12,6 +12,6 @@ extension Array {
         if count <= size {
             return self
         }
-        return Array(self[0 ..< size])
+        return Array(self[0..<size])
     }
 }

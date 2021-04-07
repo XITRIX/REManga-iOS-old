@@ -43,7 +43,9 @@ class TitleInfoViewController: BaseViewControllerWith<TitleInfoViewModel, TitleV
             self.titleDescription.attributedText = $0?.htmlAttributedString()
         }).dispose(in: bag)
         viewModel.entity.categories.observeNext { [unowned self] in
-            self.tagsCollection.addTags($0.collection.compactMap { $0.name })
+            self.tagsCollection.addTags($0.collection.compactMap {
+                $0.name
+            })
         }.dispose(in: bag)
         viewModel.entity.publishers.observeNext { [unowned self] publishers in
             for publisher in publishers.collection {
@@ -79,5 +81,6 @@ extension TitleInfoViewController: TTGTextTagCollectionViewDelegate {
         false
     }
 
-    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {}
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+    }
 }

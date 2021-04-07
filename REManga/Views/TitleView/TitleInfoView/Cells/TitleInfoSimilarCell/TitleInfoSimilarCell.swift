@@ -12,7 +12,7 @@ class TitleInfoSimilarCell: UICollectionViewCell {
     @IBOutlet var details: UILabel!
     @IBOutlet var image: UIImageView!
     @IBOutlet var totalFavorites: UILabel!
-    
+
     func setModel(_ model: ReSimilarContent) {
         name.text = model.rusName
         details.text = model.type

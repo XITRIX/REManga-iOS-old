@@ -9,7 +9,7 @@ import UIKit
 
 class TagCell: UICollectionViewCell {
     @IBOutlet var name: UILabel!
-    
+
     func setModel(_ model: ReTitleStatus) {
         name.text = model.name
     }

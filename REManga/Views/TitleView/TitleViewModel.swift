@@ -9,6 +9,8 @@ import Bond
 import Foundation
 
 class TitleViewModel: BaseViewModelWith<String> {
+    var props: ReTitleProps?
+
     let rusName = Observable<String?>(nil)
     let enName = Observable<String?>(nil)
     let info = Observable<String?>(nil)
@@ -22,22 +24,26 @@ class TitleViewModel: BaseViewModelWith<String> {
     let description = Observable<String?>(nil)
     let categories = MutableObservableCollection<[ReTitleStatus]>()
     let publishers = MutableObservableCollection<[ReTitlePublisher]>()
-    
+    let continueChapter = Observable<ReTitleChapter?>(nil)
+    let firstChapter = Observable<ReTitleChapter?>(nil)
+    let bookmark = Observable<String?>(nil)
+
     let similar = MutableObservableCollection<[ReSimilarContent]>()
-    
+
     override func prepare(_ parameter: String) {
         ReClient.shared.getTitle(title: parameter) { result in
             switch result {
             case .failure(let error):
                 self.setState(.failed(error))
             case .success(let model):
+                self.props = model.props
                 self.loadModel(model.content)
                 self.setState(.done)
             }
         }
         loadSimilar(parameter)
     }
-    
+
     func loadModel(_ model: ReTitleContent) {
         rusName.value = model.rusName
         enName.value = model.enName
@@ -50,15 +56,24 @@ class TitleViewModel: BaseViewModelWith<String> {
         categories.replace(with: model.categories ?? [])
         publishers.replace(with: model.publishers ?? [])
         branches.replace(with: model.branches ?? [])
-        
+        continueChapter.value = model.continueReading
+        firstChapter.value = model.firstChapter
+        if let bookmarkType = model.bookmarkType {
+            bookmark.value = props?.bookmarkTypes?[bookmarkType].name
+        }
+        if bookmark.value == nil {
+            bookmark.value = "Добавить в закладки"
+        }
+
         if let img = model.img?.high {
             image.value = URL(string: ReClient.baseUrl + img)
         }
         if let _branch = model.activeBranch ?? model.branches?.first?.id {
             branch.value = _branch
         }
+
     }
-    
+
     func loadSimilar(_ parameter: String) {
         ReClient.shared.getSimilar(title: parameter) { result in
             switch result {

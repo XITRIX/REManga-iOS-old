@@ -26,6 +26,10 @@ class ReaderViewModel: BaseViewModelWith<Int> {
 
     func loadModel(_ model: ReChapterContent) {
         name.value = model.name
-        pages.replace(with: model.pages.map { $0.parts }.flatMap { $0 })
+        pages.replace(with: model.pages.map {
+            $0.parts
+        }.flatMap {
+            $0
+        })
     }
 }

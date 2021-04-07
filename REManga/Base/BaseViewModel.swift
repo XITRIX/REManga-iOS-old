@@ -13,8 +13,8 @@ enum ModelState: Equatable {
     case loading
     case failed(Error)
     case done
-    
-    static func == (lhs: ModelState, rhs: ModelState) -> Bool {
+
+    static func ==(lhs: ModelState, rhs: ModelState) -> Bool {
         switch (lhs, rhs) {
         case (.loading, .loading):
             return true
@@ -31,16 +31,17 @@ enum ModelState: Equatable {
 class BaseViewModel {
     let bag = DisposeBag()
     let state = Observable<ModelState>(.loading)
-    
+
     required init() {
         prepare()
     }
-    
+
     func setState(_ state: ModelState) {
         self.state.value = state
     }
-    
-    func prepare() {}
+
+    func prepare() {
+    }
 }
 
 class BaseViewModelWith<T>: BaseViewModel {
@@ -48,12 +49,15 @@ class BaseViewModelWith<T>: BaseViewModel {
         super.init()
         prepare(parameter)
     }
-    
-    func prepare(_ parameter: T) {}
-    
+
+    func prepare(_ parameter: T) {
+    }
+
     @available(*, unavailable)
-    required init() {}
-    
+    required init() {
+    }
+
     @available(*, unavailable)
-    override func prepare() {}
+    override func prepare() {
+    }
 }

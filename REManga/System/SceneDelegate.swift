@@ -8,17 +8,29 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
+
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
-        
-        let root = CollectionViewController()
-        window?.rootViewController = SANavigationController(rootViewController: root)
+        guard let _ = (scene as? UIWindowScene) else {
+            return
+        }
+
+        let catalog = CollectionViewController()
+        let navCatalog = SANavigationController(rootViewController: catalog)
+        navCatalog.tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(systemName: "rectangle.grid.3x2"), selectedImage: UIImage(systemName: "rectangle.grid.3x2.fill"))
+
+        let user = UserViewController()
+        let navUser = SANavigationController(rootViewController: user)
+        navUser.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
+
+        let tabs = UITabBarController()
+        tabs.viewControllers = [navCatalog, navUser]
+
+        window?.rootViewController = tabs
         window?.makeKeyAndVisible()
     }
 

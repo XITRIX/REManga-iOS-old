@@ -13,7 +13,7 @@ class CatalogCellView: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var score: UILabel!
     @IBOutlet var status: UILabel!
-    
+
     func setModel(_ model: ReCatalogContent) {
         title.text = model.rusName
         subTitle.text = "\((model.type ?? "")) \((model.genres?.first?.name ?? ""))"
@@ -22,7 +22,7 @@ class CatalogCellView: UICollectionViewCell {
         status.superview?.isHidden = model.bookmarkType == nil
         imageView.kf.setImage(with: URL(string: ReClient.baseUrl + (model.img?.mid ?? "")))
     }
-    
+
     func setModel(_ model: ReSearchContent) {
         title.text = model.rusName
         subTitle.text = model.enName

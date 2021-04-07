@@ -18,7 +18,9 @@ class BranchViewModel: BaseViewModelWith<Int?> {
 
     func setBranch(_ parameter: Int?) {
         guard let parameter = parameter
-        else { return }
+                else {
+            return
+        }
 
         ReClient.shared.getBranch(branch: parameter) { result in
             switch result {

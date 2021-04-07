@@ -53,7 +53,7 @@ extension SANavigationController: UIGestureRecognizerDelegate {
         if viewControllers.last?.navigationItem.leftBarButtonItem != nil {
             return false
         }
-        
+
         if locker {
             return false
         }
@@ -73,7 +73,7 @@ extension SANavigationController: UIGestureRecognizerDelegate {
                 }
             }
         }
-        
+
         return false
     }
 }

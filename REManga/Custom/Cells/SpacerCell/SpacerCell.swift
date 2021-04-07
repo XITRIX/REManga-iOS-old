@@ -10,7 +10,7 @@ import UIKit
 class SpacerCell: UITableViewCell {
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var loadingIndicatior: UIActivityIndicatorView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +21,7 @@ class SpacerCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func set(_ tableView: UITableView, offset: CGFloat = 0) {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             tableView.beginUpdates()
@@ -30,5 +30,5 @@ class SpacerCell: UITableViewCell {
             tableView.endUpdates()
         }
     }
-    
+
 }

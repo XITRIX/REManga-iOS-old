@@ -10,5 +10,5 @@ import ReactiveKit
 import Bond
 
 extension ReactiveExtensions where Base: UISearchBar {
-    
+
 }

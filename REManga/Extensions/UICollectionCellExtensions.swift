@@ -8,11 +8,19 @@
 import UIKit
 
 extension UITableViewCell {
-    static var id: String { String(describing: Self.self) }
-    static var nib: UINib { UINib(nibName: id, bundle: Bundle.main) }
+    static var id: String {
+        String(describing: Self.self)
+    }
+    static var nib: UINib {
+        UINib(nibName: id, bundle: Bundle.main)
+    }
 }
 
 extension UICollectionViewCell {
-    static var id: String { String(describing: Self.self) }
-    static var nib: UINib { UINib(nibName: id, bundle: Bundle.main) }
+    static var id: String {
+        String(describing: Self.self)
+    }
+    static var nib: UINib {
+        UINib(nibName: id, bundle: Bundle.main)
+    }
 }
