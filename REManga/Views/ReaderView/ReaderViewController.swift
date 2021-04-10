@@ -7,12 +7,29 @@
 
 import UIKit
 
-class ReaderViewController: BaseViewControllerWith<ReaderViewModel, Int> {
+class ReaderViewController: BaseViewControllerWith<ReaderViewModel, ReaderViewModelParams> {
+    @IBOutlet var prevChapter: UIButton!
+    @IBOutlet var chapter: UIButton!
+    @IBOutlet var nextChapter: UIButton!
+    @IBOutlet var bookmark: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var topBar: UIVisualEffectView!
+    @IBOutlet var bottomBar: UIVisualEffectView!
 
     var _navigationBarIsHidden: Bool = false
+
+    override var swipeAnywhereDisabled: Bool {
+        true
+    }
+
     override var navigationBarIsHidden: Bool? {
-        _navigationBarIsHidden
+        true
+    }
+
+    override var hidesBottomBarWhenPushed: Bool {
+        get { true }
+        set {}
     }
 
     override func setView() {
@@ -27,7 +44,18 @@ class ReaderViewController: BaseViewControllerWith<ReaderViewModel, Int> {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReaderPageCell.id, for: indexPath) as! ReaderPageCell
             cell.setModel(pages[indexPath.row])
             return cell
-        }
+        }.dispose(in: bag)
+
+        backButton.reactive.tap.observeNext { [unowned self] _ in
+            navigationController?.popViewController(animated: true)
+        }.dispose(in: bag)
+        
+        viewModel.name.bind(to: chapter.reactive.title).dispose(in: bag)
+        
+        viewModel.prevAvailable.bind(to: prevChapter.reactive.isEnabled).dispose(in: bag)
+        viewModel.nextAvailable.bind(to: nextChapter.reactive.isEnabled).dispose(in: bag)
+        prevChapter.bind(viewModel.loadPrevChapter).dispose(in: bag)
+        nextChapter.bind(viewModel.loadNextChapter).dispose(in: bag)
 
         collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleNavigationHidden)))
     }
@@ -38,18 +66,18 @@ class ReaderViewController: BaseViewControllerWith<ReaderViewModel, Int> {
         }
 
         _navigationBarIsHidden = !_navigationBarIsHidden
-        updateNavigationControllerState()
-    }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touches.first?.phase
+        UIView.animate(withDuration: 0.3) {
+            self.topBar.transform = CGAffineTransform(translationX: 0, y: self._navigationBarIsHidden ? -self.topBar.frame.height : 0)
+            self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self._navigationBarIsHidden ? self.bottomBar.frame.height : 0)
+        }
     }
 }
 
 extension ReaderViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let page = viewModel.pages.collection[indexPath.row]
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width / CGFloat(page.width) * CGFloat(page.height))
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width * CGFloat(page.height) / CGFloat(page.width))
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -65,6 +93,9 @@ extension ReaderViewController: UICollectionViewDelegateFlowLayout {
             _navigationBarIsHidden = false
         }
 
-        updateNavigationControllerState()
+        UIView.animate(withDuration: 0.3) {
+            self.topBar.transform = CGAffineTransform(translationX: 0, y: self._navigationBarIsHidden ? -self.topBar.frame.height : 0)
+            self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self._navigationBarIsHidden ? self.bottomBar.frame.height : 0)
+        }
     }
 }

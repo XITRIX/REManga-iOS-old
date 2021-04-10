@@ -9,6 +9,8 @@ import UIKit
 import ReactiveKit
 import Bond
 
-extension ReactiveExtensions where Base: UISearchBar {
-
+extension UIButton {
+    func bind(_ action: @escaping () -> ()) -> Disposable {
+        self.reactive.tap.observeNext(with: action)
+    }
 }

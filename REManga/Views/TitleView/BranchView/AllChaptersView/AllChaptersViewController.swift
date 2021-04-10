@@ -8,6 +8,8 @@
 import UIKit
 
 class AllChaptersViewController: BaseTableViewControllerWith<AllChaptersViewModel, [ReBranchContent]> {
+    override var navigationBarIsHidden: Bool? { false }
+    
     override func setView() {
         tableView.register(BranchChapterCell.nib, forCellReuseIdentifier: BranchChapterCell.id)
         tableView.backgroundColor = .secondarySystemBackground
@@ -24,7 +26,7 @@ class AllChaptersViewController: BaseTableViewControllerWith<AllChaptersViewMode
 
         tableView.reactive.selectedRowIndexPath.observeNext { [unowned self] indexPath in
             tableView.deselectRow(at: indexPath, animated: true)
-            self.show(ReaderViewController(parameter: viewModel.chapters[indexPath.row].id), sender: self)
+            self.show(ReaderViewController(parameter: ReaderViewModelParams(chapters: viewModel.chapters.collection, current: indexPath.row)), sender: self)
         }.dispose(in: bag)
     }
 }

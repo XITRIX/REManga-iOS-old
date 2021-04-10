@@ -17,19 +17,19 @@ class ReClient {
 
     @discardableResult
     func getTitle(title: String, completionHandler: @escaping (Result<ReTitleModel, Error>) -> ()) -> DataRequest? {
-        let api = "api/titles/" + title
+        let api = "api/titles/\(title)/"
         return baseRequest(api, completionHandler: completionHandler)
     }
 
     @discardableResult
     func getBranch(branch: Int, completionHandler: @escaping (Result<ReBranchModel, Error>) -> ()) -> DataRequest? {
-        let api = "api/titles/chapters/?branch_id=" + String(branch)
+        let api = "api/titles/chapters/?branch_id=\(String(branch))"
         return baseRequest(api, completionHandler: completionHandler)
     }
 
     @discardableResult
     func getSimilar(title: String, completionHandler: @escaping (Result<ReSimilarModel, Error>) -> ()) -> DataRequest? {
-        let api = "api/titles/" + title + "/similar"
+        let api = "api/titles/\(title)/similar"
         return baseRequest(api, completionHandler: completionHandler)
     }
 
@@ -56,12 +56,23 @@ class ReClient {
         let api = "api/users/current/"
         return baseRequest(api, completionHandler: completionHandler)
     }
+    
+    @discardableResult
+    func setViews(chapter: Int, completionHandler: ((Result<String, Error>) -> ())? = nil) -> DataRequest? {
+        let api = "api/activity/views/"
+        
+        let parameters: [String: String] = [
+            "chapter": "\(chapter)"
+        ]
+
+        return baseRequest(api, method: .post, parameters: parameters, completionHandler: completionHandler)
+    }
 
     @discardableResult
-    func baseRequest<T: Decodable>(_ api: String, completionHandler: @escaping (Result<T, Error>) -> ()) -> DataRequest? {
+    func baseRequest<T: Decodable>(_ api: String, method: HTTPMethod = .get, parameters: Parameters? = nil, completionHandler: ((Result<T, Error>) -> ())? = nil) -> DataRequest? {
         guard let apiUrl = api.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                 else {
-            completionHandler(.failure(RuntimeError("Wrong url: \(api)")))
+            completionHandler?(.failure(RuntimeError("Wrong url: \(api)")))
             return nil
         }
 
@@ -69,19 +80,24 @@ class ReClient {
             "Authorization": "Bearer \(token)"
         ]
 
-        return AF.request(ReClient.baseUrl + apiUrl, method: .get, encoding: URLEncoding.default, headers: headers).responseData { response in
+        return AF.request(ReClient.baseUrl + apiUrl, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { response in
             switch response.result {
             case .success(let res):
+                if T.self == String.self {
+                    completionHandler?(.success(String(data: res, encoding: .utf8) as! T))
+                    return
+                }
+                
                 do {
                     let title = try JSONDecoder().decode(T.self, from: res)
-                    completionHandler(.success(title))
+                    completionHandler?(.success(title))
                     print(title)
                 } catch {
-                    completionHandler(.failure(error))
+                    completionHandler?(.failure(error))
                     print(error)
                 }
             case .failure(let error):
-                completionHandler(.failure(error))
+                completionHandler?(.failure(error))
             }
         }
     }

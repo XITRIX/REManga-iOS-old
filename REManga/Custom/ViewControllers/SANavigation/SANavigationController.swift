@@ -50,11 +50,14 @@ extension SANavigationController: UINavigationControllerDelegate {
 
 extension SANavigationController: UIGestureRecognizerDelegate {
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if viewControllers.last?.navigationItem.leftBarButtonItem != nil {
+        guard let controller = (viewControllers.last as? SAViewController)
+        else { return false }
+        
+        if controller.navigationItem.leftBarButtonItem != nil {
             return false
         }
 
-        if locker {
+        if locker || controller.swipeAnywhereDisabled {
             return false
         }
 

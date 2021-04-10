@@ -53,8 +53,6 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
 
         aboutView = TitleInfoViewController(parameter: viewModel)
         branchView = BranchViewController(self, parameter: nil)
-
-        backButtonConstraint.constant = (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 6
     }
 
     override func setView() {
@@ -134,6 +132,8 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
                 view.safeAreaInsets.bottom
 
         scrollView.contentInset.bottom = view.safeAreaInsets.bottom
+        
+        backButtonConstraint.constant = (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 6
     }
 
     @IBAction func segmentStateChanged(_ sender: UISegmentedControl) {

@@ -29,6 +29,7 @@ class CollectionViewModel: BaseViewModel {
 
     func loadNext(completionHandler: ((Result<ReCatalogModel, Error>) -> ())? = nil) {
         if loadLock {
+            completionHandler?(.failure(RuntimeError("Loading in progress")))
             return
         }
 

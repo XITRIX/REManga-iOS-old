@@ -22,9 +22,11 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
     var columns: CGFloat {
         view.traitCollection.horizontalSizeClass == .compact ? 3 : 5
     }
+
     var activityView: UIActivityIndicatorView!
 
     var overlayView: OverlayController!
+    var bottomReachedTrigger = false
 
     override func loadView() {
         super.loadView()
@@ -69,7 +71,8 @@ class CollectionViewController: BaseViewController<CollectionViewModel> {
             var snapshot = NSDiffableDataSourceSnapshot<Section, ReCatalogContent>()
             snapshot.appendSections([.main])
             snapshot.appendItems(content.collection)
-            self.collectionViewDataSource.apply(snapshot)
+            collectionViewDataSource.apply(snapshot)
+            bottomReachedTrigger = false
         }.dispose(in: bag)
     }
 }
@@ -80,14 +83,17 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (bottomReachedTrigger) { return }
+        
         if scrollView.contentOffset.y + scrollView.frame.height > scrollView.contentSize.height - 200 {
+            bottomReachedTrigger = true
             viewModel.loadNext()
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let dir = viewModel.content[indexPath.item].dir
-                else {
+        else {
             return
         }
 

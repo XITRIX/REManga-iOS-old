@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Alamofire
 @testable import REManga
 
 class REMangaTests: XCTestCase {
@@ -16,6 +17,55 @@ class REMangaTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func testApiCurrent() throws {
+        let client = ReClient()
+        let expect = expectation(description: "ReClient gets title and runs the callback closure")
+
+        client.getCurrent { result in
+            switch result {
+            case .success(let model):
+                print(model)
+                break
+            case .failure(let error):
+                XCTFail("Error getting title: \(error)")
+                break
+            }
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+    }
+    
+    func testApiSetViews() throws {
+        let client = ReClient()
+        let expect = expectation(description: "ReClient gets title and runs the callback closure")
+
+        client.setViews(chapter: 326824) { result in
+            switch result {
+            case .success(let model):
+                if model == "\"ok\"" {
+                    expect.fulfill()
+                    return
+                }
+                XCTFail("Error getting Views: \(model)")
+                break
+            case .failure(let error):
+                XCTFail("Error getting title: \(error)")
+                break
+            }
+        }
+
+        waitForExpectations(timeout: 3) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
     }
     
     func testApiTitle() throws {
@@ -33,7 +83,7 @@ class REMangaTests: XCTestCase {
             }
             expect.fulfill()
         }
-        
+
         waitForExpectations(timeout: 3) { error in
             if let error = error {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
@@ -75,5 +125,29 @@ class REMangaTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
 
+}
+
+extension Dictionary {
+    func percentEncoded() -> Data? {
+        return map { key, value in
+            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            return escapedKey + "=" + escapedValue
+        }
+        .joined(separator: "&")
+        .data(using: .utf8)
+    }
+}
+
+extension CharacterSet {
+    static let urlQueryValueAllowed: CharacterSet = {
+        let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        let subDelimitersToEncode = "!$&'()*+,;="
+
+        var allowed = CharacterSet.urlQueryAllowed
+        allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
+        return allowed
+    }()
 }

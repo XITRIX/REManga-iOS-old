@@ -9,13 +9,22 @@
 import UIKit
 
 protocol NavigationProtocol {
+    var swipeAnywhereDisabled: Bool { get }
     var toolBarIsHidden: Bool? { get }
     var navigationBarIsHidden: Bool? { get }
 
     func updateNavigationControllerState(animated: Bool)
 }
 
+extension NavigationProtocol {
+    var swipeAnywhereDisabled: Bool { false }
+}
+
 class SAViewController: UIViewController, NavigationProtocol {
+    var swipeAnywhereDisabled: Bool {
+        false
+    }
+    
     var toolBarIsHidden: Bool? {
         nil
     }
@@ -55,6 +64,10 @@ class SAViewController: UIViewController, NavigationProtocol {
 }
 
 class SATableViewController: UITableViewController, NavigationProtocol {
+    var swipeAnywhereDisabled: Bool {
+        false
+    }
+    
     var toolBarIsHidden: Bool? {
         nil
     }

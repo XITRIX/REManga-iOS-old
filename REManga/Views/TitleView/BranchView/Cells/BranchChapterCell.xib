@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="tB1-L4-ddy">
-                        <rect key="frame" x="50" y="8" width="184.5" height="38"/>
+                        <rect key="frame" x="50" y="8" width="181.5" height="38"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Глава 140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGK-hg-NuG">
                                 <rect key="frame" x="0.0" y="0.0" width="69" height="16"/>
@@ -53,17 +53,17 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vQ6-7E-rg3">
-                        <rect key="frame" x="250.5" y="19.5" width="45.5" height="15"/>
+                        <rect key="frame" x="247.5" y="18" width="48.5" height="18"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d9s-CC-ffN">
-                                <rect key="frame" x="0.0" y="1.5" width="15" height="12.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d9s-CC-ffN">
+                                <rect key="frame" x="0.0" y="1.5" width="18" height="15.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="2dW-oM-fQw"/>
-                                    <constraint firstAttribute="height" constant="15" id="kMd-tg-Qns"/>
+                                    <constraint firstAttribute="width" constant="18" id="2dW-oM-fQw"/>
+                                    <constraint firstAttribute="height" constant="18" id="kMd-tg-Qns"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.6К" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyk-iJ-oPQ">
-                                <rect key="frame" x="19" y="0.0" width="26.5" height="15"/>
+                                <rect key="frame" x="22" y="0.0" width="26.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,6 +87,7 @@
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <connections>
                 <outlet property="chapter" destination="YGK-hg-NuG" id="cka-Zw-AHI"/>
+                <outlet property="like" destination="d9s-CC-ffN" id="NwE-Wf-oPm"/>
                 <outlet property="pubDate" destination="AgF-Rf-TAV" id="emU-dE-tep"/>
                 <outlet property="publishers" destination="qnS-oF-Jsd" id="R4q-th-vso"/>
                 <outlet property="score" destination="xyk-iJ-oPQ" id="SD4-uI-56i"/>
@@ -96,7 +97,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
