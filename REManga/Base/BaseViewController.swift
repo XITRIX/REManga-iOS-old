@@ -44,20 +44,28 @@ class BaseViewController<Model: BaseViewModel>: SAViewController {
 
     func binding() {
         viewModel.state.observeNext { [unowned self] state in
-            switch state {
-            case .loading:
-                self.addOverlay(LoadingViewController())
-            case .failed:
-                self.removeOverlay()
-            case .done:
-                self.removeOverlay()
-            }
+            stateChanged(state)
         }.dispose(in: bag)
     }
+    
+    func stateChanged(_ state: ModelState) {
+        switch state {
+        case .loading:
+            self.addOverlay(LoadingViewController())
+        case .failed:
+            self.removeOverlay()
+        case .done:
+            self.removeOverlay()
+        }
+    }
 
-    func addOverlay(_ viewController: UIViewController) {
+    func addOverlay(_ viewController: UIViewController, at: Int? = nil) {
         removeOverlay()
-        viewController.add(to: self)
+        if let at = at {
+            viewController.insert(to: self, at: at)
+        } else {
+            viewController.add(to: self)
+        }
         overlay = viewController
     }
 

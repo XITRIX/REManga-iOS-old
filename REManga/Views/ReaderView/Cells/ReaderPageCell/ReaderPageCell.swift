@@ -2,12 +2,12 @@
 //  ReaderPageCell.swift
 //  REManga
 //
-//  Created by Даниил Виноградов on 10.03.2021.
+//  Created by Даниил Виноградов on 10.04.2021.
 //
 
 import UIKit
 
-class ReaderPageCell: UICollectionViewCell {
+class ReaderPageCell: UITableViewCell {
     @IBOutlet var pageImage: UIImageView!
     @IBOutlet var loader: UIActivityIndicatorView!
 

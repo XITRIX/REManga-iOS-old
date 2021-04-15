@@ -74,7 +74,7 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
 
         tableView.reactive.selectedRowIndexPath.observeNext { [unowned self] indexPath in
             tableView.deselectRow(at: indexPath, animated: true)
-            self.hostController?.show(ReaderViewController(parameter: ReaderViewModelParams(chapters: viewModel.chapters.collection, current: indexPath.row)), sender: self)
+            self.hostController?.show(ReaderViewController(parameter: ReaderViewModelParams(chapterId: viewModel.chapters.collection[indexPath.row].id, chapters: viewModel.chapters.collection)), sender: self)
         }.dispose(in: bag)
 
         showAllButton.reactive.controlEvents(.touchUpInside).observeNext { [unowned self] _ in

@@ -23,6 +23,14 @@ extension UIViewController {
         viewController.view.addSubview(self.view)
         self.didMove(toParent: viewController)
     }
+    
+    func insert(to viewController: UIViewController, at: Int) {
+        viewController.addChild(self)
+        self.view.frame = viewController.view.bounds
+        self.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        viewController.view.insertSubview(self.view, at: at)
+        self.didMove(toParent: viewController)
+    }
 
     func remove() {
         self.willMove(toParent: nil)

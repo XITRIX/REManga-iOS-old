@@ -26,7 +26,8 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
     @IBOutlet var mainTitle: UILabel!
     @IBOutlet var titleState: UILabel!
     @IBOutlet var rating: UILabel!
-    @IBOutlet weak var continueReadingLabel: UILabel!
+    @IBOutlet var continueReadingView: UIControl!
+    @IBOutlet var continueReadingLabel: UILabel!
     @IBOutlet var continueReadingChapterLabel: UILabel!
 
     @IBOutlet var bookmarkLabel: UILabel!
@@ -114,8 +115,16 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
         }.bind(to: continueReadingChapterLabel.reactive.text).dispose(in: bag)
 
         viewModel.bookmark.bind(to: bookmarkLabel.reactive.text).dispose(in: bag)
+        
+        continueReadingView.reactive.controlEvents(.touchUpInside).observeNext { [unowned self] _ in
+            if let chapter = viewModel.firstChapter.value?.id {
+                show(ReaderViewController(parameter: ReaderViewModelParams(chapterId: chapter)), sender: self)
+            } else if let chapter = viewModel.continueChapter.value?.id {
+                show(ReaderViewController(parameter: ReaderViewModelParams(chapterId: chapter)), sender: self)
+            }
+        }.dispose(in: bag)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         headerBottom.makeArch()

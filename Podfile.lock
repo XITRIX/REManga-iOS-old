@@ -6,6 +6,15 @@ PODS:
   - Differ (1.4.5)
   - Kingfisher (6.0.1)
   - MarqueeLabel (4.0.5)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - ReactiveKit (3.17.4)
   - TTGTagCollectionView (1.11.1)
 
@@ -14,6 +23,7 @@ DEPENDENCIES:
   - Bond
   - Kingfisher (~> 6.0)
   - MarqueeLabel
+  - PromiseKit (~> 6.8)
   - TTGTagCollectionView
 
 SPEC REPOS:
@@ -23,6 +33,7 @@ SPEC REPOS:
     - Differ
     - Kingfisher
     - MarqueeLabel
+    - PromiseKit
     - ReactiveKit
     - TTGTagCollectionView
 
@@ -32,9 +43,10 @@ SPEC CHECKSUMS:
   Differ: 3b6bd78e2b20cc795d9a86f7641d087524e4273e
   Kingfisher: adde87a4f74f6a3845395769354efff593581740
   MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   ReactiveKit: f9f9e079efa39312c597bf1508ef4810d111ce76
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: 3154a5089424da1aa0a4e81170e2efded64f44ed
+PODFILE CHECKSUM: 42e2d08967b78bce421459b7f6950472aade61c6
 
 COCOAPODS: 1.10.1

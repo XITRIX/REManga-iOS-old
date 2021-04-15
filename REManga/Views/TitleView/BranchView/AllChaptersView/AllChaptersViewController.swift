@@ -26,7 +26,7 @@ class AllChaptersViewController: BaseTableViewControllerWith<AllChaptersViewMode
 
         tableView.reactive.selectedRowIndexPath.observeNext { [unowned self] indexPath in
             tableView.deselectRow(at: indexPath, animated: true)
-            self.show(ReaderViewController(parameter: ReaderViewModelParams(chapters: viewModel.chapters.collection, current: indexPath.row)), sender: self)
+            self.show(ReaderViewController(parameter: ReaderViewModelParams(chapterId: viewModel.chapters.collection[indexPath.row].id, chapters: viewModel.chapters.collection)), sender: self)
         }.dispose(in: bag)
     }
 }

@@ -10,6 +10,7 @@ target 'REManga' do
   pod 'Kingfisher', '~> 6.0'
   pod "TTGTagCollectionView"
   pod 'MarqueeLabel'
+  pod "PromiseKit", "~> 6.8"
 
   target 'REMangaTests' do
     inherit! :search_paths

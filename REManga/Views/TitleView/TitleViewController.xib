@@ -17,6 +17,7 @@
                 <outlet property="bookmarkLabel" destination="JTI-3u-BQb" id="Vit-4L-RVN"/>
                 <outlet property="continueReadingChapterLabel" destination="6ga-uS-RuQ" id="B9z-EL-XTh"/>
                 <outlet property="continueReadingLabel" destination="53p-Q2-MjC" id="y6y-Bf-aCc"/>
+                <outlet property="continueReadingView" destination="fXc-Wa-zBz" id="luG-br-O7m"/>
                 <outlet property="headerBottom" destination="zYZ-i9-Na7" id="iPw-0i-Dvq"/>
                 <outlet property="headerView" destination="LbV-gJ-fIe" id="Hc7-dP-tBi"/>
                 <outlet property="mainTitle" destination="mbY-cu-JQd" id="x3S-us-BR2"/>
@@ -91,19 +92,19 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-vz-0Jo">
                                                                     <rect key="frame" x="0.0" y="104.33333333333331" width="366" height="50"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXc-Wa-zBz">
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXc-Wa-zBz" customClass="UIControl">
                                                                             <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
                                                                             <subviews>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9QL-ZD-qfH">
+                                                                                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9QL-ZD-qfH">
                                                                                     <rect key="frame" x="16" y="8" width="145" height="34"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="ПРОДОЛЖИТЬ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="53p-Q2-MjC">
+                                                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="ПРОДОЛЖИТЬ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="53p-Q2-MjC">
                                                                                             <rect key="frame" x="21.333333333333336" y="0.0" width="102.33333333333331" height="17"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Том 2 Глава 140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ga-uS-RuQ">
+                                                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Том 2 Глава 140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ga-uS-RuQ">
                                                                                             <rect key="frame" x="25.666666666666671" y="17" width="94" height="17"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,6 +114,9 @@
                                                                                 </stackView>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                                            <accessibility key="accessibilityConfiguration">
+                                                                                <accessibilityTraits key="traits" button="YES"/>
+                                                                            </accessibility>
                                                                             <constraints>
                                                                                 <constraint firstItem="9QL-ZD-qfH" firstAttribute="leading" secondItem="fXc-Wa-zBz" secondAttribute="leading" constant="16" id="EYv-5B-FMm"/>
                                                                                 <constraint firstItem="9QL-ZD-qfH" firstAttribute="top" secondItem="fXc-Wa-zBz" secondAttribute="top" constant="8" id="K2u-Qc-qTg"/>

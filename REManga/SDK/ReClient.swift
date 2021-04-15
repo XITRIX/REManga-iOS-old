@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+//import PromiseKit
 import Foundation
 
 class ReClient {

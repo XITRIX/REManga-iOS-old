@@ -48,12 +48,12 @@
 		7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */; };
 		7C788DEC25F167A0003CFDA0 /* TitleInfoSimilarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */; };
 		7C788DED25F167A0003CFDA0 /* TitleInfoSimilarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */; };
+		7C82177F2622007A00FBB8F1 /* ReaderPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82177D2622007A00FBB8F1 /* ReaderPageCell.swift */; };
+		7C8217802622007A00FBB8F1 /* ReaderPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C82177E2622007A00FBB8F1 /* ReaderPageCell.xib */; };
 		7C9DF3D925F8DC77008D2898 /* AllChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */; };
 		7C9DF3E125F8DC8F008D2898 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */; };
 		7C9DF3E625F8E9FA008D2898 /* AllChaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */; };
 		7C9DF3EE25F908E5008D2898 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3ED25F908E5008D2898 /* ArrayExtensions.swift */; };
-		7C9DF3FA25F925F6008D2898 /* ReaderPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3F825F925F6008D2898 /* ReaderPageCell.swift */; };
-		7C9DF3FB25F925F6008D2898 /* ReaderPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9DF3F925F925F6008D2898 /* ReaderPageCell.xib */; };
 		7C9DF40325F92ABA008D2898 /* ReSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF40225F92ABA008D2898 /* ReSearchModel.swift */; };
 		7C9DF40825F92DF7008D2898 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF40725F92DF7008D2898 /* RuntimeError.swift */; };
 		7C9DF41225F938C5008D2898 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF41025F938C5008D2898 /* SearchViewController.swift */; };
@@ -159,12 +159,13 @@
 		7C788DE125F16488003CFDA0 /* ReSimilarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSimilarModel.swift; sourceTree = "<group>"; };
 		7C788DEA25F167A0003CFDA0 /* TitleInfoSimilarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoSimilarCell.swift; sourceTree = "<group>"; };
 		7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleInfoSimilarCell.xib; sourceTree = "<group>"; };
+		7C82177D2622007A00FBB8F1 /* ReaderPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPageCell.swift; sourceTree = "<group>"; };
+		7C82177E2622007A00FBB8F1 /* ReaderPageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderPageCell.xib; sourceTree = "<group>"; };
+		7C87B3152628125A000871B8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChaptersViewController.swift; sourceTree = "<group>"; };
 		7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChaptersViewModel.swift; sourceTree = "<group>"; };
 		7C9DF3ED25F908E5008D2898 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
-		7C9DF3F825F925F6008D2898 /* ReaderPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPageCell.swift; sourceTree = "<group>"; };
-		7C9DF3F925F925F6008D2898 /* ReaderPageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderPageCell.xib; sourceTree = "<group>"; };
 		7C9DF40225F92ABA008D2898 /* ReSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSearchModel.swift; sourceTree = "<group>"; };
 		7C9DF40725F92DF7008D2898 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		7C9DF41025F938C5008D2898 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -420,8 +421,7 @@
 		7C73281225F5559B00B7CFAD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7C9DF3F825F925F6008D2898 /* ReaderPageCell.swift */,
-				7C9DF3F925F925F6008D2898 /* ReaderPageCell.xib */,
+				7C82176E2621FE9D00FBB8F1 /* ReaderPageCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -468,6 +468,15 @@
 				7C788DAC25F03088003CFDA0 /* TagCell.xib */,
 			);
 			path = TagCell;
+			sourceTree = "<group>";
+		};
+		7C82176E2621FE9D00FBB8F1 /* ReaderPageCell */ = {
+			isa = PBXGroup;
+			children = (
+				7C82177D2622007A00FBB8F1 /* ReaderPageCell.swift */,
+				7C82177E2622007A00FBB8F1 /* ReaderPageCell.xib */,
+			);
+			path = ReaderPageCell;
 			sourceTree = "<group>";
 		};
 		7C9DF3D725F8DC1C008D2898 /* AllChaptersView */ = {
@@ -648,6 +657,7 @@
 		80BD8326DBD4B4651EFDD100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C87B3152628125A000871B8 /* SwiftUI.framework */,
 				6F88A0C02AE761F47BBF9BDC /* Pods_REManga.framework */,
 				E4B67AF735F900C8EAFE53EF /* Pods_REManga_REMangaUITests.framework */,
 				3E1294895C89BA39D7685032 /* Pods_REMangaTests.framework */,
@@ -777,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C788DAE25F03088003CFDA0 /* TagCell.xib in Resources */,
+				7C8217802622007A00FBB8F1 /* ReaderPageCell.xib in Resources */,
 				7CF77F7C25E31E16002D575B /* CollectionViewController.xib in Resources */,
 				7C3491EC25E1887A009938B5 /* LaunchScreen.storyboard in Resources */,
 				7C38DC3125F6963B004CA053 /* CatalogCellView.xib in Resources */,
@@ -796,7 +807,6 @@
 				7C9DF41325F938C5008D2898 /* SearchViewController.xib in Resources */,
 				7CF77FA525E42796002D575B /* BranchViewController.xib in Resources */,
 				7C73280425F54A6500B7CFAD /* ReaderViewController.xib in Resources */,
-				7C9DF3FB25F925F6008D2898 /* ReaderPageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,7 +970,6 @@
 				7C9DF3EE25F908E5008D2898 /* ArrayExtensions.swift in Sources */,
 				7CF77F6D25E308BB002D575B /* IntExtensions.swift in Sources */,
 				7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */,
-				7C9DF3FA25F925F6008D2898 /* ReaderPageCell.swift in Sources */,
 				7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */,
 				7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */,
 				7C38DC3D25F7C97B004CA053 /* ReBranchModel.swift in Sources */,
@@ -971,6 +980,7 @@
 				7C47709825FB968E008146E8 /* UserHeaderView.swift in Sources */,
 				7CF77F7B25E31E16002D575B /* CollectionViewController.swift in Sources */,
 				7CA35FE225E26E3700C0245B /* ReTitleModel.swift in Sources */,
+				7C82177F2622007A00FBB8F1 /* ReaderPageCell.swift in Sources */,
 				7CE002EC25E2BAC6003AFCEF /* LoadingViewController.swift in Sources */,
 				7C3491E725E18877009938B5 /* REManga.xcdatamodeld in Sources */,
 				7C38DC2625F6878C004CA053 /* CollectionViewModel.swift in Sources */,
