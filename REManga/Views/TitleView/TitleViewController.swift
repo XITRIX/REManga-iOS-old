@@ -36,6 +36,7 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
 
     var aboutView: TitleInfoViewController!
     var branchView: BranchViewController!
+    var commentsView: CommentsViewController!
 
     var containedVC: UIViewController?
 
@@ -58,11 +59,8 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
 
     override func setView() {
         scrollView.delegate = self
-
         navigationItem.titleView = titleView
-
         navEffect.alpha = 0
-
         setView(aboutView)
     }
 
@@ -77,6 +75,12 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
     override func binding() {
         super.binding()
 
+        viewModel.id.observeNext { [unowned self] id in
+            if let id = id {
+                commentsView = CommentsViewController(parameter: CommentsParameters(titleId: id, lock: true))
+            }
+        }.dispose(in: bag)
+        
         backButton.reactive.tap.observeNext { [unowned self] _ in
             self.navigationController?.popViewController(animated: true)
         }.dispose(in: bag)
@@ -153,6 +157,8 @@ class TitleViewController: BaseViewControllerWith<TitleViewModel, String> {
             let nvc = UINavigationController(rootViewController: branchView)
             nvc.navigationBar.isHidden = true
             setView(nvc)
+        case 2:
+            setView(commentsView)
         default:
             setView(nil)
         }

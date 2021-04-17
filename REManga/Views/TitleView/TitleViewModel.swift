@@ -11,6 +11,7 @@ import Foundation
 class TitleViewModel: BaseViewModelWith<String> {
     var props: ReTitleProps?
 
+    let id = Observable<Int?>(nil)
     let rusName = Observable<String?>(nil)
     let enName = Observable<String?>(nil)
     let info = Observable<String?>(nil)
@@ -45,6 +46,7 @@ class TitleViewModel: BaseViewModelWith<String> {
     }
 
     func loadModel(_ model: ReTitleContent) {
+        id.value = model.id
         rusName.value = model.rusName
         enName.value = model.enName
         rating.value = "\(model.avgRating.text) (голосов: \(model.countRating.text))"

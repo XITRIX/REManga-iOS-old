@@ -14,6 +14,9 @@ extension UITableViewCell {
     static var nib: UINib {
         UINib(nibName: id, bundle: Bundle.main)
     }
+    static func register(in tableView: UITableView) {
+        tableView.register(nib, forCellReuseIdentifier: id)
+    }
 }
 
 extension UICollectionViewCell {
@@ -22,5 +25,8 @@ extension UICollectionViewCell {
     }
     static var nib: UINib {
         UINib(nibName: id, bundle: Bundle.main)
+    }
+    static func register(in collectionView: UICollectionView) {
+        collectionView.register(nib, forCellWithReuseIdentifier: id)
     }
 }

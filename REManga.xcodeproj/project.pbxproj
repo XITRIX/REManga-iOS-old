@@ -50,6 +50,12 @@
 		7C788DED25F167A0003CFDA0 /* TitleInfoSimilarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C788DEB25F167A0003CFDA0 /* TitleInfoSimilarCell.xib */; };
 		7C82177F2622007A00FBB8F1 /* ReaderPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82177D2622007A00FBB8F1 /* ReaderPageCell.swift */; };
 		7C8217802622007A00FBB8F1 /* ReaderPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C82177E2622007A00FBB8F1 /* ReaderPageCell.xib */; };
+		7C87B36A262979BE000871B8 /* ReCommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C87B369262979BE000871B8 /* ReCommentsModel.swift */; };
+		7C87B37126297BB3000871B8 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C87B36F26297BB3000871B8 /* CommentsViewController.swift */; };
+		7C87B37226297BB3000871B8 /* CommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C87B37026297BB3000871B8 /* CommentsViewController.xib */; };
+		7C87B37A26297BCC000871B8 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C87B37926297BCC000871B8 /* CommentsViewModel.swift */; };
+		7C87B38426299583000871B8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C87B38226299583000871B8 /* CommentCell.swift */; };
+		7C87B38526299583000871B8 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C87B38326299583000871B8 /* CommentCell.xib */; };
 		7C9DF3D925F8DC77008D2898 /* AllChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */; };
 		7C9DF3E125F8DC8F008D2898 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */; };
 		7C9DF3E625F8E9FA008D2898 /* AllChaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */; };
@@ -162,6 +168,12 @@
 		7C82177D2622007A00FBB8F1 /* ReaderPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPageCell.swift; sourceTree = "<group>"; };
 		7C82177E2622007A00FBB8F1 /* ReaderPageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReaderPageCell.xib; sourceTree = "<group>"; };
 		7C87B3152628125A000871B8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		7C87B369262979BE000871B8 /* ReCommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReCommentsModel.swift; sourceTree = "<group>"; };
+		7C87B36F26297BB3000871B8 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		7C87B37026297BB3000871B8 /* CommentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsViewController.xib; sourceTree = "<group>"; };
+		7C87B37926297BCC000871B8 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		7C87B38226299583000871B8 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		7C87B38326299583000871B8 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		7C9DF3D825F8DC77008D2898 /* AllChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChaptersViewController.swift; sourceTree = "<group>"; };
 		7C9DF3E025F8DC8F008D2898 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		7C9DF3E525F8E9FA008D2898 /* AllChaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChaptersViewModel.swift; sourceTree = "<group>"; };
@@ -333,6 +345,7 @@
 		7C34922725E18961009938B5 /* TitleView */ = {
 			isa = PBXGroup;
 			children = (
+				7C87B36E26297B8D000871B8 /* CommentsView */,
 				7CFA5B2F25EEABA9002817F9 /* TitleInfoView */,
 				7CF77FA125E42769002D575B /* BranchView */,
 				7CFA5B2625EEAA00002817F9 /* Cells */,
@@ -479,6 +492,26 @@
 			path = ReaderPageCell;
 			sourceTree = "<group>";
 		};
+		7C87B36E26297B8D000871B8 /* CommentsView */ = {
+			isa = PBXGroup;
+			children = (
+				7C87B381262994F1000871B8 /* Cells */,
+				7C87B37926297BCC000871B8 /* CommentsViewModel.swift */,
+				7C87B36F26297BB3000871B8 /* CommentsViewController.swift */,
+				7C87B37026297BB3000871B8 /* CommentsViewController.xib */,
+			);
+			path = CommentsView;
+			sourceTree = "<group>";
+		};
+		7C87B381262994F1000871B8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C87B38226299583000871B8 /* CommentCell.swift */,
+				7C87B38326299583000871B8 /* CommentCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7C9DF3D725F8DC1C008D2898 /* AllChaptersView */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +542,7 @@
 				7CA35FE125E26E3700C0245B /* ReTitleModel.swift */,
 				7C9DF40225F92ABA008D2898 /* ReSearchModel.swift */,
 				7C4770B725FBC320008146E8 /* ReUserModel.swift */,
+				7C87B369262979BE000871B8 /* ReCommentsModel.swift */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -788,6 +822,7 @@
 			files = (
 				7C788DAE25F03088003CFDA0 /* TagCell.xib in Resources */,
 				7C8217802622007A00FBB8F1 /* ReaderPageCell.xib in Resources */,
+				7C87B37226297BB3000871B8 /* CommentsViewController.xib in Resources */,
 				7CF77F7C25E31E16002D575B /* CollectionViewController.xib in Resources */,
 				7C3491EC25E1887A009938B5 /* LaunchScreen.storyboard in Resources */,
 				7C38DC3125F6963B004CA053 /* CatalogCellView.xib in Resources */,
@@ -797,6 +832,7 @@
 				7C47707D25FB9381008146E8 /* UserViewController.xib in Resources */,
 				7CFA5B2B25EEAA32002817F9 /* TitleTagCell.xib in Resources */,
 				7C4770A025FB9697008146E8 /* UserHeaderView.xib in Resources */,
+				7C87B38526299583000871B8 /* CommentCell.xib in Resources */,
 				7C3491E925E1887A009938B5 /* Assets.xcassets in Resources */,
 				7CF77F9325E39DB8002D575B /* SpacerCell.xib in Resources */,
 				7CF77FBB25E429CC002D575B /* BranchChapterCell.xib in Resources */,
@@ -936,6 +972,7 @@
 			files = (
 				7C38DC3025F6963B004CA053 /* CatalogCellView.swift in Sources */,
 				7C010C0025F00E8D007C0FC9 /* StringExtensions.swift in Sources */,
+				7C87B37A26297BCC000871B8 /* CommentsViewModel.swift in Sources */,
 				7C3491DD25E18877009938B5 /* AppDelegate.swift in Sources */,
 				7CA35FDD25E26B4200C0245B /* ReClient.swift in Sources */,
 				7C3491DF25E18877009938B5 /* SceneDelegate.swift in Sources */,
@@ -960,7 +997,9 @@
 				7C4770BD25FBC3BC008146E8 /* UserViewModel.swift in Sources */,
 				7C47707C25FB9381008146E8 /* UserViewController.swift in Sources */,
 				7CF77FAD25E427A5002D575B /* BranchViewModel.swift in Sources */,
+				7C87B37126297BB3000871B8 /* CommentsViewController.swift in Sources */,
 				7C7327FB25F4F33E00B7CFAD /* SAViewControllers.swift in Sources */,
+				7C87B38426299583000871B8 /* CommentCell.swift in Sources */,
 				7CFA5B3225EEABC9002817F9 /* TitleInfoViewController.swift in Sources */,
 				7C788DCA25F13664003CFDA0 /* UIViewControllerExtensions.swift in Sources */,
 				7C47707225FA71B6008146E8 /* KeyboardHelper.swift in Sources */,
@@ -972,6 +1011,7 @@
 				7C788DAD25F03088003CFDA0 /* TagCell.swift in Sources */,
 				7C38DC2125F68693004CA053 /* ReCatalogModel.swift in Sources */,
 				7C788DE225F16488003CFDA0 /* ReSimilarModel.swift in Sources */,
+				7C87B36A262979BE000871B8 /* ReCommentsModel.swift in Sources */,
 				7C38DC3D25F7C97B004CA053 /* ReBranchModel.swift in Sources */,
 				7CF77FA425E42796002D575B /* BranchViewController.swift in Sources */,
 				7C788DEC25F167A0003CFDA0 /* TitleInfoSimilarCell.swift in Sources */,

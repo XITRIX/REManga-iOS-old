@@ -20,7 +20,7 @@ struct ReTitleModel: Codable {
 
 // MARK: - ReTitleContent
 struct ReTitleContent: Codable {
-    let id: Int?
+    let id: Int
     let img: ReTitleImg?
     let enName: String?
     let rusName: String?

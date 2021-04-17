@@ -51,6 +51,12 @@ class ReClient {
         let api = "api/search/?query=\(query)&page=\(page)&count=\(count)"
         return baseRequest(api, completionHandler: completionHandler)
     }
+    
+    @discardableResult
+    func getTitleComments(titleId: Int, page: Int, completionHandler: @escaping (Result<ReCommentsModel, Error>) -> ()) -> DataRequest? {
+        let api = "api/activity/comments/?title_id=\(titleId)&page=\(page)&ordering=-id"
+        return baseRequest(api, completionHandler: completionHandler)
+    }
 
     @discardableResult
     func getCurrent(completionHandler: @escaping (Result<ReUserModel, Error>) -> ()) -> DataRequest? {

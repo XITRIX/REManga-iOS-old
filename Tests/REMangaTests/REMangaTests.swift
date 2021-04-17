@@ -42,6 +42,29 @@ class REMangaTests: XCTestCase {
         }
     }
     
+    func testApiGetComments() throws {
+        let client = ReClient()
+        let expect = expectation(description: "ReClient gets title and runs the callback closure")
+
+        client.getTitleComments(titleId: 934, page: 1) { result in
+            switch result {
+            case .success(let model):
+                print(model)
+                break
+            case .failure(let error):
+                XCTFail("Error getting title: \(error)")
+                break
+            }
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+    }
+    
     func testApiSetViews() throws {
         let client = ReClient()
         let expect = expectation(description: "ReClient gets title and runs the callback closure")

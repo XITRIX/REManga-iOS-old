@@ -14,3 +14,32 @@ extension UIButton {
         self.reactive.tap.observeNext(with: action)
     }
 }
+
+extension ReactiveExtensions where Base: UITableView {
+    
+//    /// A signal that emits index paths of selected table view cells.
+//    ///
+//    /// - Note: Uses table view's `delegate` protocol proxy to observe calls made to `UITableViewDelegate.tableView(_:didSelectRowAt:)` method.
+//    public var selectedRowIndexPath: SafeSignal<IndexPath> {
+//        return delegate.signal(for: #selector(UITableViewDelegate.tableView(_:didSelectRowAt:))) { (subject: PassthroughSubject<IndexPath, Never>, _: UITableView, indexPath: IndexPath) in
+//            subject.send(indexPath)
+//        }
+//    }
+//
+//    /// A signal that emits index paths of selected table view cells.
+//    ///
+//    /// - Note: Uses table view's `delegate` protocol proxy to observe calls made to `UITableViewDelegate.tableView(_:didSelectRowAt:)` method.
+//    public var selectedRowIndexPath: SafeSignal<IndexPath> {
+//        return delegate.signal(for: #selector(UITableViewDelegate.tableView(_:didSelectRowAt:))) { (subject: PassthroughSubject<IndexPath, Never>, _: UITableView, indexPath: IndexPath) in
+//            subject.send(indexPath)
+//        }
+//    }
+}
+
+//class A: NSObject, UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//    }
+//    
+//    cell
+//}

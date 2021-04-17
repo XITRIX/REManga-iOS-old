@@ -38,7 +38,7 @@ class BranchViewController: BaseViewControllerWith<BranchViewModel, Int?> {
     override func setView() {
         tableView.rowHeight = cellHeight
         tableView.isScrollEnabled = false
-        tableView.register(BranchChapterCell.nib, forCellReuseIdentifier: BranchChapterCell.id)
+        BranchChapterCell.register(in: tableView)
     }
 
     override func viewWillAppear(_ animated: Bool) {

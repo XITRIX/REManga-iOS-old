@@ -44,6 +44,11 @@ class ReaderViewController: BaseViewControllerWith<ReaderViewModel, ReaderViewMo
         lastFrameView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height )
         lastFrameView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.tableFooterView = lastFrameView
+        
+        tableView.minimumZoomScale = 0.5
+        tableView.maximumZoomScale = 4
+        tableView.bouncesZoom = true
+//        tableView.zoom
     }
 
     override func binding() {
